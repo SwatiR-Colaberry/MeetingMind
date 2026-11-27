@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1",
+  "projectId": "de163468-2d6a-4a66-8062-5cb28f9a7f2f",
+  "storyId": "STORY-000",
+  "projectTruthBaseRevision": 1,
+  "observedAt": "2026-11-27T19:30:00Z",
+  "sourceCommitSha": "d1d2a3686b4ece8acd8aeaac8096bed2839649e6",
+  "factProposals": [
+    {
+      "dimension": "systems",
+      "value": "The plan's systems list (derived.systems) names only ChromeOS, while intake names Zoom, Google Meet, Microsoft Teams, Webex, Skype and WhatsApp Desktop as platforms to detect calls from. Should those platforms be listed as systems?",
+      "evidence": ".colaberry/plan.json"
+    },
+    {
+      "dimension": "approval_points",
+      "value": "Both approval points stated at intake (permissions and participant consent before capture; proven accuracy before full autonomy) have no named approver.",
+      "evidence": ".colaberry/plan.json"
+    },
+    {
+      "dimension": "data",
+      "value": "Proposed (not built) data model of 18 entities: Meeting, Project, Participant, Transcript, TranscriptSegment, Summary, ActionItem, Decision, AudioCapture, AudioDevice, ConsentRecord, ProcessingEvent, Notification, ExportJob, Integration, AssistantAnswer, Settings, ExclusionRule.",
+      "evidence": "command-center/data-model.json"
+    },
+    {
+      "dimension": "unknowns",
+      "value": "The plan has no scoped agent roster, no measures with numeric targets, and no named artifacts or hand-offs.",
+      "evidence": ".colaberry/plan.json"
+    }
+  ],
+  "decisions": [
+    {
+      "statement": "The AI agents tab is built from story owners and labels them as owners, not agents; arrows show where one owner's story blocks another's.",
+      "rationale": "plan.agents and plan.derived.handoffs are empty, and presenting a job title as an AI agent would be untrue.",
+      "evidence": "command-center/agents.js"
+    },
+    {
+      "statement": "The knowledge-base question box is a local text search over the loaded files, not a model.",
+      "rationale": "A static page cannot hold an API key.",
+      "evidence": "command-center/knowledge.js"
+    },
+    {
+      "statement": "All data loads through one module, so pointing the page at the running system later changes one file.",
+      "rationale": "Brief: the data comes from one place.",
+      "evidence": "command-center/data.js"
+    }
+  ],
+  "limitations": [
+    {
+      "statement": "System connection status cannot be checked from a static page; every indicator stays grey until the running system reports.",
+      "evidence": "command-center/tabs.js"
+    },
+    {
+      "statement": ".colaberry/plan.json was committed from the downloaded plan.seed.json; its SHA-256 does not match manifest.plan_sha256, so the platform may treat it as hand-edited and stop refreshing it.",
+      "evidence": ".colaberry/plan.json"
+    }
+  ],
+  "demonstrationEvidence": [
+    {
+      "kind": "test",
+      "ref": "tests/command-center.test.mjs"
+    },
+    {
+      "kind": "file",
+      "ref": "index.html"
+    }
+  ],
+  "measurementEvents": []
+}

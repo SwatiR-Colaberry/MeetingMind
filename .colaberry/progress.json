@@ -1,0 +1,2164 @@
+{
+  "schema_version": 2,
+  "project": "MeetingMind AI",
+  "totals": {
+    "stories_total": 62,
+    "stories_verified": 0,
+    "stories_submitted": 0,
+    "stories_in_progress": 0,
+    "stories_not_started": 62,
+    "criteria_total": 191,
+    "criteria_passed": 0,
+    "points_awarded": 0
+  },
+  "stories": [
+    {
+      "id": "STORY-000",
+      "release": null,
+      "acceptance_total": 5,
+      "criteria": [
+        {
+          "text": "Given the Command Center, when it is opened, then every tab is reachable and every card drills down one level.",
+          "passed": true
+        },
+        {
+          "text": "Given sample mode, when any tab is shown, then the sample data is visibly labelled as sample.",
+          "passed": true
+        },
+        {
+          "text": "Given the Command Center, when any tab renders, then .colaberry/plan.json and .colaberry/progress.json are both committed in this repo and every tab reads its content from them at runtime rather than from hard-coded values.",
+          "passed": true
+        },
+        {
+          "text": "Given the Command Center, when any tab is shown, then .colaberry/manifest.json is committed in this repo and every tab shows how old that data is and warns when the age exceeds a week.",
+          "passed": true
+        },
+        {
+          "text": "Trust — no tab shows a number, a connection or a result the project has not actually produced.",
+          "passed": true
+        }
+      ],
+      "files_touched": [
+        "index.html",
+        "command-center/app.js",
+        "command-center/data.js",
+        "command-center/util.js",
+        "command-center/tabs.js",
+        "command-center/project.js",
+        "command-center/agents.js",
+        "command-center/knowledge.js",
+        "command-center/datamodel.js",
+        "command-center/styles.css",
+        "command-center/data-model.json",
+        "command-center/notes.json",
+        ".colaberry/plan.json",
+        ".colaberry/progress.json",
+        ".colaberry/manifest.json",
+        ".colaberry/enrichment/STORY-000.json",
+        ".nojekyll"
+      ],
+      "tests_added": [
+        "tests/command-center.test.mjs"
+      ],
+      "notes": "Nine tabs, hash routes, sample/real switch. Agents tab uses story owners (plan has no agent roster). Data model is a proposal awaiting review. Run tests: node --test tests/command-center.test.mjs",
+      "updated_at": "2026-11-27T13:09:09Z",
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 5,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-001",
+      "release": "r0",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a supported platform is in use, when a meeting starts, then the system detects it and begins audio capture.",
+          "passed": false
+        },
+        {
+          "text": "Given a meeting ends, when the system detects this, then it stops capturing audio.",
+          "passed": false
+        },
+        {
+          "text": "Trust: When audio capture starts, an entry is logged indicating the meeting start and consent verification.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-002",
+      "release": "r0",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given the user has enabled auto-start, when the laptop boots, then the application starts automatically and runs in the system tray.",
+          "passed": false
+        },
+        {
+          "text": "Given the application is running, when the user checks the system tray, then the application is visible there.",
+          "passed": false
+        },
+        {
+          "text": "Trust: When the application starts, an entry is logged indicating the startup mode (manual/automatic).",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-003",
+      "release": "r0",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a meeting is detected, when it starts, then the user receives a notification about the detection.",
+          "passed": false
+        },
+        {
+          "text": "Given a transcript is ready, when the processing completes, then the user receives a notification about the transcript availability.",
+          "passed": false
+        },
+        {
+          "text": "Trust: When a notification is sent, an entry is logged with the notification type and timestamp.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-004",
+      "release": "r0",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given audio capture is active, when the user checks the application, then a clear indicator is visible.",
+          "passed": false
+        },
+        {
+          "text": "Given transcription is active, when the user checks the application, then a clear indicator is visible.",
+          "passed": false
+        },
+        {
+          "text": "Trust: When the indicator changes state, an entry is logged with the current state and timestamp.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-005",
+      "release": "r0",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given the user accesses the settings, when they view data processing information, then the system clearly distinguishes between local and external data processing.",
+          "passed": false
+        },
+        {
+          "text": "Given the user reviews the data policy, when they check the application documentation, then it accurately reflects data processing practices.",
+          "passed": false
+        },
+        {
+          "text": "Trust: When data processing settings are updated, an entry is logged with the changes and timestamp.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-006",
+      "release": "r1",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a live meeting is in progress, when the system captures audio, then it generates a real-time transcript with speaker identification and timestamps.",
+          "passed": false
+        },
+        {
+          "text": "Given overlapping conversations occur, when the system processes the audio, then it maintains the chronological order and identifies speakers correctly.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a meeting is transcribed, when the transcript is saved, then it includes timestamps and speaker identification for audit purposes.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-007",
+      "release": "r1",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a transcript with errors, when a user selects an audio segment, then they can replay the audio and correct the transcript.",
+          "passed": false
+        },
+        {
+          "text": "Given a corrected transcript, when the user saves changes, then the updated transcript is stored with the corrections.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a correction is made, when the transcript is saved, then the system logs the correction for audit purposes.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-008",
+      "release": "r1",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a meeting has ended, when real-time transcription was unavailable, then the system generates the transcript immediately.",
+          "passed": false
+        },
+        {
+          "text": "Given a generated transcript, when the user accesses it, then it is available in the meeting history.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a transcript is generated post-meeting, when it is saved, then it includes timestamps and speaker identification for audit purposes.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-009",
+      "release": "r1",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a transcript is saved, when it is stored, then it is encrypted using the specified encryption protocol.",
+          "passed": false
+        },
+        {
+          "text": "Given an audio recording is saved, when it is stored, then it is encrypted using the specified encryption protocol.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given encrypted data, when accessed, then it requires decryption keys for access.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-010",
+      "release": "r1",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a network interruption occurs, when the connection is restored, then transcription resumes from the last saved point.",
+          "passed": false
+        },
+        {
+          "text": "Given an application crash occurs, when the application restarts, then transcription resumes from the last saved point.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a recovery event, when transcription resumes, then the system logs the event for audit purposes.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-011",
+      "release": "r2",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a user with multiple audio devices connected, when the system starts, then it must identify all available audio input and output devices.",
+          "passed": false
+        },
+        {
+          "text": "Given a user switches from a built-in microphone to a Bluetooth headset during a meeting, when the system detects the change, then it must continue capturing audio without interruption.",
+          "passed": false
+        },
+        {
+          "text": "Trust: The system logs all detected audio devices and any changes in device usage.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-012",
+      "release": "r2",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a meeting with background noise, when the system captures audio, then it must apply noise reduction to enhance clarity.",
+          "passed": false
+        },
+        {
+          "text": "Given a user enables audio enhancement settings, when the system processes audio, then it must enhance the audio quality according to the settings.",
+          "passed": false
+        },
+        {
+          "text": "Trust: The system logs the application of noise reduction and enhancement settings for each audio capture session.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-013",
+      "release": "r2",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a user accesses audio settings, when they adjust quality settings, then the system must apply these settings to subsequent audio captures.",
+          "passed": false
+        },
+        {
+          "text": "Given a user sets a high-quality audio setting, when a meeting is recorded, then the audio must reflect the high-quality setting.",
+          "passed": false
+        },
+        {
+          "text": "Trust: The system logs all changes to audio quality settings and their application to audio captures.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-014",
+      "release": "r2",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a user changes their audio configuration, when the system detects the change, then it must adapt without requiring a restart.",
+          "passed": false
+        },
+        {
+          "text": "Given a user connects a new audio device mid-meeting, when the system detects the device, then it must switch to the new device seamlessly.",
+          "passed": false
+        },
+        {
+          "text": "Trust: The system logs all configuration changes and adaptations made during audio capture.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-015",
+      "release": "r2",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a user on Windows, when the system captures audio, then it must comply with Windows-specific restrictions.",
+          "passed": false
+        },
+        {
+          "text": "Given a user on macOS, when the system captures audio, then it must comply with macOS-specific restrictions.",
+          "passed": false
+        },
+        {
+          "text": "Trust: The system logs compliance with OS-specific restrictions for each audio capture session.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-016",
+      "release": "r2",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given multiple audio sources are used, when the system captures audio, then it must synchronize the inputs to prevent misalignment.",
+          "passed": false
+        },
+        {
+          "text": "Given a user reviews a synchronized recording, when they play it back, then the audio must be coherent and aligned.",
+          "passed": false
+        },
+        {
+          "text": "Trust: The system logs synchronization status and any adjustments made during audio capture.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-017",
+      "release": "r2",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a user selects an audio format, when the system captures audio, then it must save the recording in the chosen format.",
+          "passed": false
+        },
+        {
+          "text": "Given a user changes the audio format setting, when a new recording is made, then it must reflect the new format.",
+          "passed": false
+        },
+        {
+          "text": "Trust: The system logs the selected audio format for each recording session.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-018",
+      "release": "r3",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given the user is logged in, when they access the dashboard, then they should see sections for ongoing, recent, and historical meetings.",
+          "passed": false
+        },
+        {
+          "text": "Given a meeting is ongoing, when the user views the dashboard, then the meeting should appear under the ongoing section with its details.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given the user accesses the dashboard, then the system must log the access time and user ID for audit purposes.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-019",
+      "release": "r3",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given meetings are organized into projects, when the user searches by project, then only meetings from that project should be displayed.",
+          "passed": false
+        },
+        {
+          "text": "Given the user searches by date, topic, participant, or keyword, when results are returned, then they should match the search criteria.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a search is performed, then the system must log the search criteria and user ID for audit purposes.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-020",
+      "release": "r3",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a user wants to delete a meeting, when they confirm the deletion, then the meeting and its recordings should be permanently removed.",
+          "passed": false
+        },
+        {
+          "text": "Given a user wants to export their data, when they choose the export option, then they should receive their data in a downloadable format.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a data deletion or export action, then the system must log the action and user ID for audit purposes.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-021",
+      "release": "r3",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a user wants to download a transcript, when they select a format, then the transcript should be available in TXT, PDF, or DOCX format.",
+          "passed": false
+        },
+        {
+          "text": "Given a user selects an unsupported format, when they attempt to download, then the system should display an error message.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a transcript download, then the system must log the download action and user ID for audit purposes.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-022",
+      "release": "r3",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a user selects local processing, when a meeting is processed, then it should be handled locally without cloud interaction.",
+          "passed": false
+        },
+        {
+          "text": "Given a user selects cloud processing, when a meeting is processed, then it should utilize cloud resources.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a processing option is selected, then the system must log the selection and user ID for audit purposes.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-023",
+      "release": "r4",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a completed meeting, when the meeting ends, then the system generates a summary including key discussion points, decisions, and action items.",
+          "passed": false
+        },
+        {
+          "text": "Given a completed meeting, when the system generates a summary, then the summary is saved automatically.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a generated summary, when it is saved, then it is logged with a timestamp and meeting ID.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-024",
+      "release": "r4",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a meeting type selection, when a user selects a format, then the system generates a summary in the chosen format.",
+          "passed": false
+        },
+        {
+          "text": "Given an unsupported meeting type, when a user selects a format, then the system provides a default summary format.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a format selection, when a summary is generated, then the format choice is logged with the meeting ID.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-025",
+      "release": "r4",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a completed meeting without real-time transcription, when the meeting ends, then the system processes and generates a transcript.",
+          "passed": false
+        },
+        {
+          "text": "Given an ongoing transcription, when the system is interrupted, then it automatically saves the transcription progress.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a transcription process, when it completes, then it is logged with a timestamp and meeting ID.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-026",
+      "release": "r4",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a completed meeting, when the system processes the transcript, then it generates a title based on discussion topics.",
+          "passed": false
+        },
+        {
+          "text": "Given a meeting with no clear topics, when the system generates a title, then it uses a default naming convention.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a generated title, when it is saved, then it is logged with the meeting ID.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-027",
+      "release": "r4",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given multiple meetings within a project, when summaries are generated, then the system consolidates them into a project-level summary.",
+          "passed": false
+        },
+        {
+          "text": "Given a project with no meetings, when a summary is requested, then the system indicates no data available.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a project-level summary, when it is generated, then it is logged with a project ID.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-028",
+      "release": "r4",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a completed meeting, when the system processes the transcript, then it categorizes the meeting based on content.",
+          "passed": false
+        },
+        {
+          "text": "Given a meeting with ambiguous content, when categorization is attempted, then the system uses a default category.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a categorized meeting, when it is saved, then the category is logged with the meeting ID.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-029",
+      "release": "r4",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given an API key, when it is stored, then it is encrypted using industry-standard encryption.",
+          "passed": false
+        },
+        {
+          "text": "Given a request for an API key, when it is retrieved, then it is decrypted securely.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given an API key operation, when it is performed, then it is logged with a timestamp and operation type.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-030",
+      "release": "r5",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a transcript with uncertain segments, when the system detects low confidence, then it flags the segment for review.",
+          "passed": false
+        },
+        {
+          "text": "Given a flagged segment, when the user reviews it, then they can see a confidence indicator.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a flagged segment, when the user corrects it, then the correction is logged in the audit trail.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-031",
+      "release": "r5",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given an audio input, when the language is spoken, then the system automatically detects the language.",
+          "passed": false
+        },
+        {
+          "text": "Given a multilingual conversation, when different languages are spoken, then the system identifies each language correctly.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a detected language, when the transcript is generated, then the language detection is logged.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-032",
+      "release": "r5",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a multilingual conversation, when the system transcribes, then it accurately transcribes each language spoken.",
+          "passed": false
+        },
+        {
+          "text": "Given a conversation in multiple languages, when the user reviews the transcript, then each language is correctly identified and transcribed.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a multilingual transcript, when reviewed, then language transitions are logged.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-033",
+      "release": "r5",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a conversation with technical terms, when transcribed, then the system accurately recognizes and transcribes the terms.",
+          "passed": false
+        },
+        {
+          "text": "Given a conversation with industry-specific vocabulary, when transcribed, then the system accurately recognizes and transcribes the vocabulary.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a transcript with technical terms, when reviewed, then recognized terms are logged.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-034",
+      "release": "r5",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given an existing transcript, when the user requests regeneration, then the system regenerates the transcript.",
+          "passed": false
+        },
+        {
+          "text": "Given a transcript with errors, when the user requests improvement, then the system improves the transcript.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a regenerated transcript, when reviewed, then changes are logged.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-035",
+      "release": "r5",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a transcript, when generated, then it is formatted with clear speaker identification and timestamps.",
+          "passed": false
+        },
+        {
+          "text": "Given a transcript, when reviewed, then it is structured with paragraphs and punctuation.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a structured transcript, when reviewed, then formatting changes are logged.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-036",
+      "release": "r5",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given an audio file, when processed offline, then the system transcribes it without internet access.",
+          "passed": false
+        },
+        {
+          "text": "Given a lack of internet connection, when transcription is requested, then the system processes the audio offline.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given an offline transcription, when completed, then the process is logged.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-037",
+      "release": "r5",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a completed transcription, when the user chooses to retain audio, then the audio is stored.",
+          "passed": false
+        },
+        {
+          "text": "Given a completed transcription, when the user chooses to delete audio, then the audio is deleted.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a user choice on audio retention, when executed, then the action is logged.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-038",
+      "release": "r6",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a series of meetings with overlapping participants and topics, when the system processes these meetings, then it should identify them as related.",
+          "passed": false
+        },
+        {
+          "text": "Given a meeting with no similar topics or participants, when processed, then it should not be marked as related to others.",
+          "passed": false
+        },
+        {
+          "text": "Trust: The system logs the criteria used to determine meeting relationships.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-039",
+      "release": "r6",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a meeting transcript with project references, when processed, then the system should link it to the appropriate project.",
+          "passed": false
+        },
+        {
+          "text": "Given a meeting transcript without project references, when processed, then it should not be linked to any project.",
+          "passed": false
+        },
+        {
+          "text": "Trust: The system logs the project linkage decisions and criteria.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-040",
+      "release": "r6",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a series of meetings with decisions made, when processed, then the system should track these decisions across meetings.",
+          "passed": false
+        },
+        {
+          "text": "Given a meeting with no decisions, when processed, then it should not add any decision tracking entries.",
+          "passed": false
+        },
+        {
+          "text": "Trust: The system logs decision tracking entries and their sources.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-041",
+      "release": "r6",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a meeting where a previously agreed plan is changed, when processed, then the system should identify and log the change.",
+          "passed": false
+        },
+        {
+          "text": "Given a meeting with no changes to plans, when processed, then it should not log any changes.",
+          "passed": false
+        },
+        {
+          "text": "Trust: The system logs changes with references to the original agreements.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-042",
+      "release": "r6",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a recurring action item discussed in multiple meetings, when processed, then the system should track its recurrence.",
+          "passed": false
+        },
+        {
+          "text": "Given a non-recurring action item, when processed, then it should not be tracked as recurring.",
+          "passed": false
+        },
+        {
+          "text": "Trust: The system logs recurrence patterns and action item status.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-043",
+      "release": "r6",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given unresolved issues discussed in multiple meetings, when processed, then the system should highlight these issues.",
+          "passed": false
+        },
+        {
+          "text": "Given resolved issues, when processed, then they should not be highlighted as unresolved.",
+          "passed": false
+        },
+        {
+          "text": "Trust: The system logs unresolved issues with references to meetings where they were discussed.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-044",
+      "release": "r6",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given tasks discussed in meetings, when processed, then the system should identify their completion status.",
+          "passed": false
+        },
+        {
+          "text": "Given tasks not discussed, when processed, then they should not have their status updated.",
+          "passed": false
+        },
+        {
+          "text": "Trust: The system logs task status changes with references to relevant discussions.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-045",
+      "release": "r6",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a deadline mentioned in a meeting, when processed, then the system should remind the user about it before the due date.",
+          "passed": false
+        },
+        {
+          "text": "Given no deadlines mentioned, when processed, then no reminders should be sent.",
+          "passed": false
+        },
+        {
+          "text": "Trust: The system logs reminders sent and their corresponding deadlines.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-046",
+      "release": "r7",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a meeting is detected, when I manually start transcription, then the system begins transcribing the meeting.",
+          "passed": false
+        },
+        {
+          "text": "Given transcription is ongoing, when I pause transcription, then the system stops transcribing until resumed.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given transcription is paused, when I resume transcription, then the system continues transcribing from where it left off.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-047",
+      "release": "r7",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a question about a past meeting, when I ask the AI assistant, then it provides a contextual answer with references to the original meeting.",
+          "passed": false
+        },
+        {
+          "text": "Given a question about a past meeting, when the AI assistant cannot find relevant information, then it informs the user that no data is available.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given an AI-generated answer, when I view the references, then they include speaker names and timestamps.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-048",
+      "release": "r7",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given an AI-generated answer, when the answer includes interpretations, then the system clearly labels them as interpretations.",
+          "passed": false
+        },
+        {
+          "text": "Given an AI-generated answer, when the answer is based solely on discussed information, then the system does not label it as an interpretation.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a mixed answer, when I view the details, then the system distinguishes between discussed facts and interpretations.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-049",
+      "release": "r7",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given the system settings, when I select local processing, then the system processes AI tasks locally.",
+          "passed": false
+        },
+        {
+          "text": "Given the system settings, when I select cloud processing, then the system processes AI tasks in the cloud.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a processing mode change, when I view the system status, then it reflects the current processing mode.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-050",
+      "release": "r7",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given related meetings, when I view a project, then the system shows a consolidated history of discussions and decisions.",
+          "passed": false
+        },
+        {
+          "text": "Given a project history, when a new related meeting occurs, then the system updates the history with new discussions and decisions.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a project history, when I view it, then it accurately reflects all related meetings and decisions.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-051",
+      "release": "r8",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given the application settings, When I exclude an application from detection, Then the system does not detect meetings from that application.",
+          "passed": false
+        },
+        {
+          "text": "Given the application settings, When I attempt to exclude an unsupported application, Then the system notifies me that exclusion is not possible.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given an excluded application, When a meeting starts, Then the system logs that the application was excluded from detection.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-052",
+      "release": "r8",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a completed meeting summary, When I choose to export it, Then the system exports to Google Calendar and other selected applications.",
+          "passed": false
+        },
+        {
+          "text": "Given a completed meeting summary, When I attempt to export to an unsupported application, Then the system notifies me of the limitation.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given an export action, When it completes, Then the system logs the export details including destination and timestamp.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-053",
+      "release": "r8",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given system audio activity, When a meeting starts, Then the system detects and begins transcription.",
+          "passed": false
+        },
+        {
+          "text": "Given microphone usage, When no meeting is detected, Then the system does not start transcription.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given an active communication detection, When it occurs, Then the system logs the detection event with audio synchronization details.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-054",
+      "release": "r8",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given the notification settings, When I configure preferences, Then the system updates my notification settings accordingly.",
+          "passed": false
+        },
+        {
+          "text": "Given the notification settings, When I disable all notifications, Then the system does not send any alerts.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a notification configuration change, When it is saved, Then the system logs the change with a timestamp.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-055",
+      "release": "r8",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given the integration settings, When I select applications for integration, Then the system connects to the chosen applications.",
+          "passed": false
+        },
+        {
+          "text": "Given the integration settings, When I deselect an application, Then the system disconnects from that application.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given an integration change, When it is saved, Then the system logs the change with application details.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-056",
+      "release": "r8",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given the current architecture, When new features are added, Then the system scales without performance degradation.",
+          "passed": false
+        },
+        {
+          "text": "Given the current architecture, When additional operating systems are supported, Then the system adapts without major changes.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a scalability test, When it is completed, Then the system logs performance metrics and scalability results.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-057",
+      "release": "r9",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given the system is idle, When I check the resource usage, Then CPU and memory consumption should be minimal.",
+          "passed": false
+        },
+        {
+          "text": "Given the system is idle, When I check the battery usage, Then the battery consumption should be efficient.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given the system is idle, When I review the audit logs, Then no unnecessary processes should be running.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-058",
+      "release": "r9",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a meeting lasts several hours, When the meeting is processed, Then the system should handle it without data loss.",
+          "passed": false
+        },
+        {
+          "text": "Given a long meeting is processed, When I check the transcript, Then it should be complete and accurate.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given a long meeting is processed, When I review the audit logs, Then the processing should be logged with timestamps.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-059",
+      "release": "r0",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given the system is set up for the first time, When a meeting is detected, Then the detection process should be idempotent and logged in the audit trail.",
+          "passed": false
+        },
+        {
+          "text": "Given the system has already detected a meeting, When the detection process is triggered again, Then no duplicate entries should be created in the audit trail.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given any detection process, When it completes, Then an entry is created in the audit trail with a timestamp and status.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-060",
+      "release": "r3",
+      "acceptance_total": 3,
+      "criteria": [
+        {
+          "text": "Given a non-technical user, When accessing the system, Then the interface should present simple options by default.",
+          "passed": false
+        },
+        {
+          "text": "Given an experienced user, When accessing advanced settings, Then additional configuration options should be available.",
+          "passed": false
+        },
+        {
+          "text": "Trust: Given any user action, When a setting is changed, Then the change is logged with user details in the audit trail.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 3,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    },
+    {
+      "id": "STORY-900",
+      "release": null,
+      "acceptance_total": 6,
+      "criteria": [
+        {
+          "text": "Given the demo, when demo/index.html is opened, then every screen in its navigation is reachable and every record opens one level down.",
+          "passed": false
+        },
+        {
+          "text": "Given any demo screen, when it is shown, then a permanent banner says the data is sample data and names the plan version the demo was built from.",
+          "passed": false
+        },
+        {
+          "text": "Given the demo, when any screen renders, then demo/demo-spec.json is committed in this repo and every screen, row and count comes from that file rather than from values typed into the page.",
+          "passed": false
+        },
+        {
+          "text": "Given .colaberry/plan.json, when the demo is built, then every story with a workspace has a screen or a stated reason for having none, and every agent and every guardrail in the plan appears in the demo.",
+          "passed": false
+        },
+        {
+          "text": "Given the Command Center, when it is opened, then it links to the demo and shows none of the demo's sample values as its own.",
+          "passed": false
+        },
+        {
+          "text": "Trust — no sample row breaks a guardrail in the plan, and no restricted field holds a value.",
+          "passed": false
+        }
+      ],
+      "files_touched": [],
+      "tests_added": [],
+      "notes": null,
+      "updated_at": null,
+      "verification": {
+        "state": "not_started",
+        "criteria_passed": 0,
+        "criteria_total": 6,
+        "verified_at": null,
+        "commit_sha": null,
+        "commit_url": null,
+        "commit_at": null,
+        "points_awarded": null,
+        "outstanding": []
+      }
+    }
+  ]
+}

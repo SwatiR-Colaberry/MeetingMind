@@ -1,0 +1,3467 @@
+{
+  "schema_version": 2,
+  "project_name": "MeetingMind AI",
+  "descriptor": "Universal AI-Powered Background Call Transcription Assistant",
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "kind": "FUNC",
+      "cluster": "Meeting Detection",
+      "priority": "must",
+      "statement": "The system must automatically detect when a meeting or voice call starts on supported platforms such as Zoom, Google Meet, Microsoft Teams, Webex, Skype, and WhatsApp Desktop.",
+      "from_dimensions": [
+        "desired_outcome",
+        "systems"
+      ],
+      "fulfilled_by": [
+        "STORY-001",
+        "STORY-059"
+      ]
+    },
+    {
+      "id": "REQ-002",
+      "kind": "FUNC",
+      "cluster": "Audio Capture",
+      "priority": "must",
+      "statement": "The system must capture both microphone and system audio simultaneously where supported, ensuring both sides of the conversation are recorded.",
+      "from_dimensions": [
+        "desired_outcome",
+        "data"
+      ],
+      "fulfilled_by": [
+        "STORY-001",
+        "STORY-059"
+      ]
+    },
+    {
+      "id": "REQ-003",
+      "kind": "FUNC",
+      "cluster": "Transcription",
+      "priority": "must",
+      "statement": "The system must generate real-time transcripts with minimal delay (ideally 2–5 seconds) while a meeting is happening.",
+      "from_dimensions": [
+        "desired_outcome",
+        "success_definition"
+      ],
+      "fulfilled_by": [
+        "STORY-006"
+      ]
+    },
+    {
+      "id": "REQ-004",
+      "kind": "FUNC",
+      "cluster": "Speaker Identification",
+      "priority": "must",
+      "statement": "The system must identify individual speakers and distinguish their statements in the transcript.",
+      "from_dimensions": [
+        "desired_outcome",
+        "success_definition"
+      ],
+      "fulfilled_by": [
+        "STORY-006"
+      ]
+    },
+    {
+      "id": "REQ-005",
+      "kind": "FUNC",
+      "cluster": "Notifications",
+      "priority": "must",
+      "statement": "The system must provide notifications when a new meeting is detected and when its transcript is ready.",
+      "from_dimensions": [
+        "desired_outcome",
+        "systems"
+      ],
+      "fulfilled_by": [
+        "STORY-003"
+      ]
+    },
+    {
+      "id": "REQ-006",
+      "kind": "FUNC",
+      "cluster": "User Controls",
+      "priority": "must",
+      "statement": "The system must allow users to manually start, pause, resume, or stop transcription.",
+      "from_dimensions": [
+        "desired_outcome",
+        "systems"
+      ],
+      "fulfilled_by": [
+        "STORY-046"
+      ]
+    },
+    {
+      "id": "REQ-007",
+      "kind": "FUNC",
+      "cluster": "User Controls",
+      "priority": "must",
+      "statement": "The system must allow users to exclude specific applications from automatic detection.",
+      "from_dimensions": [
+        "desired_outcome",
+        "systems"
+      ],
+      "fulfilled_by": [
+        "STORY-051"
+      ]
+    },
+    {
+      "id": "REQ-008",
+      "kind": "FUNC",
+      "cluster": "Dashboard",
+      "priority": "must",
+      "statement": "The system must provide a centralized dashboard where users can access all their previous meetings, view ongoing and recently completed meetings, and browse historical meetings.",
+      "from_dimensions": [
+        "desired_outcome",
+        "systems"
+      ],
+      "fulfilled_by": [
+        "STORY-018"
+      ]
+    },
+    {
+      "id": "REQ-009",
+      "kind": "CONSTRAINT",
+      "cluster": "Compatibility",
+      "priority": "must",
+      "statement": "The system must support Windows, macOS, and Linux operating systems, with ChromeOS compatibility explored.",
+      "from_dimensions": [
+        "desired_outcome",
+        "systems"
+      ],
+      "fulfilled_by": []
+    },
+    {
+      "id": "REQ-010",
+      "kind": "FUNC",
+      "cluster": "Audio Capture",
+      "priority": "must",
+      "statement": "The system must support built-in microphones, external microphones, Bluetooth headsets, wired headsets, and other audio devices.",
+      "from_dimensions": [
+        "desired_outcome",
+        "systems"
+      ],
+      "fulfilled_by": [
+        "STORY-011"
+      ]
+    },
+    {
+      "id": "REQ-011",
+      "kind": "FUNC",
+      "cluster": "Audio Processing",
+      "priority": "must",
+      "statement": "The system must provide noise reduction and audio enhancement capabilities.",
+      "from_dimensions": [
+        "desired_outcome",
+        "systems"
+      ],
+      "fulfilled_by": [
+        "STORY-012"
+      ]
+    },
+    {
+      "id": "REQ-012",
+      "kind": "FUNC",
+      "cluster": "User Controls",
+      "priority": "must",
+      "statement": "The system must allow users to configure audio quality settings.",
+      "from_dimensions": [
+        "desired_outcome",
+        "systems"
+      ],
+      "fulfilled_by": [
+        "STORY-013"
+      ]
+    },
+    {
+      "id": "REQ-013",
+      "kind": "FUNC",
+      "cluster": "AI Meeting Intelligence",
+      "priority": "must",
+      "statement": "The system must generate AI-powered meeting summaries, key discussion points, decisions, and action items after every meeting.",
+      "from_dimensions": [
+        "desired_outcome",
+        "systems"
+      ],
+      "fulfilled_by": [
+        "STORY-023"
+      ]
+    },
+    {
+      "id": "REQ-014",
+      "kind": "FUNC",
+      "cluster": "AI Meeting Intelligence",
+      "priority": "must",
+      "statement": "The system must allow users to select different summary formats depending on the meeting type, such as business meeting, technical discussion, or casual conversation.",
+      "from_dimensions": [
+        "desired_outcome",
+        "systems"
+      ],
+      "fulfilled_by": [
+        "STORY-024"
+      ]
+    },
+    {
+      "id": "REQ-015",
+      "kind": "SAFE",
+      "cluster": "Privacy and Security",
+      "priority": "must",
+      "statement": "The system must provide options for local processing and cloud-based AI processing, prioritizing local processing to reduce privacy risks and cloud costs.",
+      "from_dimensions": [
+        "desired_outcome",
+        "security_context"
+      ],
+      "fulfilled_by": [
+        "STORY-022"
+      ]
+    },
+    {
+      "id": "REQ-016",
+      "kind": "SAFE",
+      "cluster": "Privacy and Security",
+      "priority": "must",
+      "statement": "The system must encrypt stored transcripts and audio recordings.",
+      "from_dimensions": [
+        "desired_outcome",
+        "security_context"
+      ],
+      "fulfilled_by": [
+        "STORY-009"
+      ]
+    },
+    {
+      "id": "REQ-017",
+      "kind": "SAFE",
+      "cluster": "Privacy and Security",
+      "priority": "must",
+      "statement": "The system must allow users to delete their data permanently and provide data export functionality.",
+      "from_dimensions": [
+        "desired_outcome",
+        "security_context"
+      ],
+      "fulfilled_by": [
+        "STORY-020"
+      ]
+    },
+    {
+      "id": "REQ-018",
+      "kind": "SAFE",
+      "cluster": "Privacy and Security",
+      "priority": "must",
+      "statement": "The system must obtain the necessary permissions before accessing microphone or system audio and require appropriate participant consent before capturing conversations.",
+      "from_dimensions": [
+        "desired_outcome",
+        "security_context"
+      ],
+      "fulfilled_by": [
+        "STORY-001",
+        "STORY-059"
+      ]
+    },
+    {
+      "id": "REQ-019",
+      "kind": "SAFE",
+      "cluster": "Privacy and Security",
+      "priority": "must",
+      "statement": "The system must provide a clear indicator whenever audio capture or transcription is active.",
+      "from_dimensions": [
+        "desired_outcome",
+        "security_context"
+      ],
+      "fulfilled_by": [
+        "STORY-004"
+      ]
+    },
+    {
+      "id": "REQ-020",
+      "kind": "SAFE",
+      "cluster": "Privacy and Security",
+      "priority": "must",
+      "statement": "The system must never secretly record calls or bypass operating-system or application permissions.",
+      "from_dimensions": [
+        "desired_outcome",
+        "security_context"
+      ],
+      "fulfilled_by": [
+        "STORY-001",
+        "STORY-059"
+      ]
+    },
+    {
+      "id": "REQ-021",
+      "kind": "FUNC",
+      "cluster": "Transcription",
+      "priority": "must",
+      "statement": "The system must allow users to replay audio segments and manually correct transcript errors.",
+      "from_dimensions": [
+        "desired_outcome",
+        "systems"
+      ],
+      "fulfilled_by": [
+        "STORY-007"
+      ]
+    },
+    {
+      "id": "REQ-022",
+      "kind": "FUNC",
+      "cluster": "Transcription",
+      "priority": "must",
+      "statement": "The system must provide a confidence indicator for uncertain transcript segments and flag them for user review.",
+      "from_dimensions": [
+        "desired_outcome",
+        "systems"
+      ],
+      "fulfilled_by": [
+        "STORY-030"
+      ]
+    },
+    {
+      "id": "REQ-023",
+      "kind": "FUNC",
+      "cluster": "Integrations",
+      "priority": "must",
+      "statement": "The system must support exporting meeting summaries and action items to external productivity applications such as Google Calendar, Microsoft Outlook Calendar, Google Drive, OneDrive, Notion, Slack, Microsoft Teams, Trello, Asana, Jira, and Basecamp.",
+      "from_dimensions": [
+        "desired_outcome",
+        "systems"
+      ],
+      "fulfilled_by": [
+        "STORY-052"
+      ]
+    },
+    {
+      "id": "REQ-024",
+      "kind": "FUNC",
+      "cluster": "User Interface",
+      "priority": "must",
+      "statement": "The system must provide a modern, intuitive, and lightweight interface with sections for home dashboard, live meeting view, meeting details, AI chat assistant, and settings.",
+      "from_dimensions": [
+        "desired_outcome",
+        "systems"
+      ],
+      "fulfilled_by": [
+        "STORY-018"
+      ]
+    },
+    {
+      "id": "REQ-025",
+      "kind": "FUNC",
+      "cluster": "Background Application & Automatic Meeting Detection",
+      "priority": "must",
+      "statement": "The system must start automatically when the laptop boots, if enabled by the user.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-002"
+      ]
+    },
+    {
+      "id": "REQ-026",
+      "kind": "FUNC",
+      "cluster": "Background Application & Automatic Meeting Detection",
+      "priority": "must",
+      "statement": "The system must run quietly in the system tray or menu bar.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-002"
+      ]
+    },
+    {
+      "id": "REQ-027",
+      "kind": "FUNC",
+      "cluster": "Background Application & Automatic Meeting Detection",
+      "priority": "must",
+      "statement": "The system must identify when a meeting ends and automatically stop capturing audio.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-001",
+        "STORY-059"
+      ]
+    },
+    {
+      "id": "REQ-028",
+      "kind": "FUNC",
+      "cluster": "Background Application & Automatic Meeting Detection",
+      "priority": "must",
+      "statement": "The system must explore detecting active communication through system audio activity and microphone usage.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-053"
+      ]
+    },
+    {
+      "id": "REQ-029",
+      "kind": "FUNC",
+      "cluster": "Universal Laptop & Operating System Compatibility",
+      "priority": "must",
+      "statement": "The system must automatically identify available audio input and output devices.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-011"
+      ]
+    },
+    {
+      "id": "REQ-030",
+      "kind": "FUNC",
+      "cluster": "Universal Laptop & Operating System Compatibility",
+      "priority": "must",
+      "statement": "The system must adapt to different audio configurations.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-014"
+      ]
+    },
+    {
+      "id": "REQ-031",
+      "kind": "FUNC",
+      "cluster": "Universal Laptop & Operating System Compatibility",
+      "priority": "must",
+      "statement": "The system must handle operating-system-specific audio capture restrictions.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-015"
+      ]
+    },
+    {
+      "id": "REQ-032",
+      "kind": "FUNC",
+      "cluster": "Audio Capture & Recording",
+      "priority": "must",
+      "statement": "The system must synchronize audio from multiple sources.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-016"
+      ]
+    },
+    {
+      "id": "REQ-033",
+      "kind": "FUNC",
+      "cluster": "Audio Capture & Recording",
+      "priority": "must",
+      "statement": "The system must support different audio formats.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-017"
+      ]
+    },
+    {
+      "id": "REQ-034",
+      "kind": "NFR",
+      "cluster": "Audio Capture & Recording",
+      "priority": "must",
+      "statement": "The system must avoid unnecessary resource consumption during audio capture and recording.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-053"
+      ]
+    },
+    {
+      "id": "REQ-035",
+      "kind": "FUNC",
+      "cluster": "Real-Time Speech-to-Text Transcription",
+      "priority": "must",
+      "statement": "The system must support post-meeting transcription when real-time processing is unavailable.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-025"
+      ]
+    },
+    {
+      "id": "REQ-036",
+      "kind": "FUNC",
+      "cluster": "Real-Time Speech-to-Text Transcription",
+      "priority": "must",
+      "statement": "The system must automatically identify the language being spoken during transcription.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-031"
+      ]
+    },
+    {
+      "id": "REQ-037",
+      "kind": "FUNC",
+      "cluster": "Real-Time Speech-to-Text Transcription",
+      "priority": "must",
+      "statement": "The system must support multiple languages and explore multilingual conversations.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-032"
+      ]
+    },
+    {
+      "id": "REQ-038",
+      "kind": "FUNC",
+      "cluster": "Real-Time Speech-to-Text Transcription",
+      "priority": "must",
+      "statement": "The system must recognize technical terminology, names, numbers, and industry-specific vocabulary during transcription.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-033"
+      ]
+    },
+    {
+      "id": "REQ-039",
+      "kind": "FUNC",
+      "cluster": "Real-Time Speech-to-Text Transcription",
+      "priority": "must",
+      "statement": "The system must include timestamps for individual statements in the transcript.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-006"
+      ]
+    },
+    {
+      "id": "REQ-040",
+      "kind": "FUNC",
+      "cluster": "Real-Time Speech-to-Text Transcription",
+      "priority": "must",
+      "statement": "The system must maintain the chronological order of conversations in the transcript.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-006"
+      ]
+    },
+    {
+      "id": "REQ-041",
+      "kind": "FUNC",
+      "cluster": "Real-Time Speech-to-Text Transcription",
+      "priority": "must",
+      "statement": "The system must handle interruptions, pauses, and overlapping conversations during transcription.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-006"
+      ]
+    },
+    {
+      "id": "REQ-042",
+      "kind": "FUNC",
+      "cluster": "Real-Time Speech-to-Text Transcription",
+      "priority": "must",
+      "statement": "The system must provide the ability to regenerate or improve transcripts.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-034"
+      ]
+    },
+    {
+      "id": "REQ-043",
+      "kind": "FUNC",
+      "cluster": "Real-Time Speech-to-Text Transcription",
+      "priority": "must",
+      "statement": "The system must ensure that transcripts are readable and properly structured.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-035"
+      ]
+    },
+    {
+      "id": "REQ-044",
+      "kind": "FUNC",
+      "cluster": "Centralized Meeting Dashboard & History",
+      "priority": "must",
+      "statement": "The system must automatically generate meeting titles based on discussion topics.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-026"
+      ]
+    },
+    {
+      "id": "REQ-045",
+      "kind": "FUNC",
+      "cluster": "Centralized Meeting Dashboard & History",
+      "priority": "must",
+      "statement": "The system must organize meetings into projects, categories, and folders.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-019"
+      ]
+    },
+    {
+      "id": "REQ-046",
+      "kind": "FUNC",
+      "cluster": "Centralized Meeting Dashboard & History",
+      "priority": "must",
+      "statement": "The system must allow users to search meetings by date, topic, participant, or keyword.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-019"
+      ]
+    },
+    {
+      "id": "REQ-047",
+      "kind": "FUNC",
+      "cluster": "Centralized Meeting Dashboard & History",
+      "priority": "must",
+      "statement": "The system must allow users to filter meetings based on different criteria.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-019"
+      ]
+    },
+    {
+      "id": "REQ-048",
+      "kind": "FUNC",
+      "cluster": "Centralized Meeting Dashboard & History",
+      "priority": "must",
+      "statement": "The system must allow users to download transcripts in TXT, PDF, DOCX, and other useful formats.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-021"
+      ]
+    },
+    {
+      "id": "REQ-049",
+      "kind": "FUNC",
+      "cluster": "Centralized Meeting Dashboard & History",
+      "priority": "must",
+      "statement": "The system must allow users to delete individual meetings or their associated recordings.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-020"
+      ]
+    },
+    {
+      "id": "REQ-050",
+      "kind": "FUNC",
+      "cluster": "AI-Powered Search Across Previous Meetings",
+      "priority": "must",
+      "statement": "The system must provide an AI assistant that searches relevant transcripts and provides contextual answers.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-047"
+      ]
+    },
+    {
+      "id": "REQ-051",
+      "kind": "FUNC",
+      "cluster": "AI-Powered Search Across Previous Meetings",
+      "priority": "must",
+      "statement": "The system must provide references to original meetings, speaker names, and timestamps in AI-generated answers.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-047"
+      ]
+    },
+    {
+      "id": "REQ-052",
+      "kind": "SAFE",
+      "cluster": "AI-Powered Search Across Previous Meetings",
+      "priority": "must",
+      "statement": "The system must distinguish between explicitly discussed information and AI-generated interpretations.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-048"
+      ]
+    },
+    {
+      "id": "REQ-053",
+      "kind": "FUNC",
+      "cluster": "Meeting Continuity & Cross-Meeting Intelligence",
+      "priority": "must",
+      "statement": "The system must identify related meetings.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-038"
+      ]
+    },
+    {
+      "id": "REQ-054",
+      "kind": "FUNC",
+      "cluster": "Meeting Continuity & Cross-Meeting Intelligence",
+      "priority": "must",
+      "statement": "The system must connect conversations belonging to the same project.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-039"
+      ]
+    },
+    {
+      "id": "REQ-055",
+      "kind": "FUNC",
+      "cluster": "Meeting Continuity & Cross-Meeting Intelligence",
+      "priority": "must",
+      "statement": "The system must track decisions across multiple meetings.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-040"
+      ]
+    },
+    {
+      "id": "REQ-056",
+      "kind": "FUNC",
+      "cluster": "Meeting Continuity & Cross-Meeting Intelligence",
+      "priority": "must",
+      "statement": "The system must identify changes in previously agreed plans.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-041"
+      ]
+    },
+    {
+      "id": "REQ-057",
+      "kind": "FUNC",
+      "cluster": "Meeting Continuity & Cross-Meeting Intelligence",
+      "priority": "must",
+      "statement": "The system must track recurring action items.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-042"
+      ]
+    },
+    {
+      "id": "REQ-058",
+      "kind": "FUNC",
+      "cluster": "Meeting Continuity & Cross-Meeting Intelligence",
+      "priority": "must",
+      "statement": "The system must highlight unresolved issues across meetings.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-043"
+      ]
+    },
+    {
+      "id": "REQ-059",
+      "kind": "FUNC",
+      "cluster": "Meeting Continuity & Cross-Meeting Intelligence",
+      "priority": "must",
+      "statement": "The system must identify tasks that have been completed or remain pending based on subsequent discussions.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-044"
+      ]
+    },
+    {
+      "id": "REQ-060",
+      "kind": "FUNC",
+      "cluster": "Meeting Continuity & Cross-Meeting Intelligence",
+      "priority": "must",
+      "statement": "The system must generate project-level discussion summaries.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-027"
+      ]
+    },
+    {
+      "id": "REQ-061",
+      "kind": "FUNC",
+      "cluster": "Smart Notifications & Automation",
+      "priority": "must",
+      "statement": "The system must remind users about deadlines extracted from conversations.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-045"
+      ]
+    },
+    {
+      "id": "REQ-062",
+      "kind": "FUNC",
+      "cluster": "Smart Notifications & Automation",
+      "priority": "must",
+      "statement": "The system must automatically categorize meetings.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-028"
+      ]
+    },
+    {
+      "id": "REQ-063",
+      "kind": "FUNC",
+      "cluster": "Smart Notifications & Automation",
+      "priority": "must",
+      "statement": "The system must allow users to configure notification preferences.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-054"
+      ]
+    },
+    {
+      "id": "REQ-064",
+      "kind": "FUNC",
+      "cluster": "Integrations With Other Applications",
+      "priority": "must",
+      "statement": "The system must allow users to choose which external applications they want to connect.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-055"
+      ]
+    },
+    {
+      "id": "REQ-065",
+      "kind": "NFR",
+      "cluster": "User Interface & Experience",
+      "priority": "must",
+      "statement": "The system must be simple enough for non-technical users while providing advanced configuration options for experienced users.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-060"
+      ]
+    },
+    {
+      "id": "REQ-066",
+      "kind": "SAFE",
+      "cluster": "Privacy, Security & Data Ownership",
+      "priority": "must",
+      "statement": "The system must securely manage API keys and authentication credentials.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-029"
+      ]
+    },
+    {
+      "id": "REQ-067",
+      "kind": "SAFE",
+      "cluster": "Privacy, Security & Data Ownership",
+      "priority": "must",
+      "statement": "The system must provide clear information about what data is processed locally and what is sent to external services.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-005",
+        "STORY-059"
+      ]
+    },
+    {
+      "id": "REQ-068",
+      "kind": "CONSTRAINT",
+      "cluster": "Technical Architecture & Technology Exploration",
+      "priority": "must",
+      "statement": "The system must be developed as a cross-platform desktop solution rather than a website.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": []
+    },
+    {
+      "id": "REQ-069",
+      "kind": "NFR",
+      "cluster": "Performance & Scalability",
+      "priority": "must",
+      "statement": "The system must have minimal CPU and memory consumption when idle.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-057"
+      ]
+    },
+    {
+      "id": "REQ-070",
+      "kind": "NFR",
+      "cluster": "Performance & Scalability",
+      "priority": "must",
+      "statement": "The system must have efficient battery usage.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-057"
+      ]
+    },
+    {
+      "id": "REQ-071",
+      "kind": "NFR",
+      "cluster": "Performance & Scalability",
+      "priority": "must",
+      "statement": "The system must be able to process long meetings.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-058"
+      ]
+    },
+    {
+      "id": "REQ-072",
+      "kind": "NFR",
+      "cluster": "Performance & Scalability",
+      "priority": "must",
+      "statement": "The system must have reliable audio synchronization.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-053"
+      ]
+    },
+    {
+      "id": "REQ-073",
+      "kind": "NFR",
+      "cluster": "Performance & Scalability",
+      "priority": "must",
+      "statement": "The system must recover from unexpected application crashes.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-010"
+      ]
+    },
+    {
+      "id": "REQ-074",
+      "kind": "NFR",
+      "cluster": "Performance & Scalability",
+      "priority": "must",
+      "statement": "The system must automatically save transcription progress.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-025"
+      ]
+    },
+    {
+      "id": "REQ-075",
+      "kind": "NFR",
+      "cluster": "Performance & Scalability",
+      "priority": "must",
+      "statement": "The system must support offline transcription where technically feasible.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-036"
+      ]
+    },
+    {
+      "id": "REQ-076",
+      "kind": "NFR",
+      "cluster": "Performance & Scalability",
+      "priority": "must",
+      "statement": "The system must be able to switch between local and cloud AI processing.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-049"
+      ]
+    },
+    {
+      "id": "REQ-077",
+      "kind": "NFR",
+      "cluster": "Performance & Scalability",
+      "priority": "must",
+      "statement": "The system must have a scalable architecture to support future features and additional operating systems.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-056"
+      ]
+    },
+    {
+      "id": "REQ-078",
+      "kind": "FUNC",
+      "cluster": "Audio Capture & Recording",
+      "priority": "must",
+      "statement": "The system must allow users to choose whether original audio recordings are retained or automatically deleted after transcription.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-037"
+      ]
+    },
+    {
+      "id": "REQ-079",
+      "kind": "FUNC",
+      "cluster": "Centralized Meeting Dashboard & History",
+      "priority": "must",
+      "statement": "The system must display meeting date, duration, participants, and platform in the centralized dashboard.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-018"
+      ]
+    },
+    {
+      "id": "REQ-080",
+      "kind": "FUNC",
+      "cluster": "AI-Powered Search Across Previous Meetings",
+      "priority": "must",
+      "statement": "The system must allow users to ask questions about previous meetings using voice or text and receive contextual answers.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-047"
+      ]
+    },
+    {
+      "id": "REQ-081",
+      "kind": "FUNC",
+      "cluster": "Meeting Continuity & Cross-Meeting Intelligence",
+      "priority": "must",
+      "statement": "The system must automatically connect related conversations to projects and provide a consolidated history of discussions, decisions, and progress.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-050"
+      ]
+    },
+    {
+      "id": "REQ-082",
+      "kind": "FUNC",
+      "cluster": "Smart Notifications & Automation",
+      "priority": "must",
+      "statement": "The system must automatically generate and save meeting summaries.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-023"
+      ]
+    },
+    {
+      "id": "REQ-083",
+      "kind": "NFR",
+      "cluster": "Performance & Scalability",
+      "priority": "must",
+      "statement": "The system must handle network interruptions during transcription and continue processing.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-010"
+      ]
+    },
+    {
+      "id": "REQ-084",
+      "kind": "NFR",
+      "cluster": "Technical Architecture",
+      "priority": "must",
+      "statement": "The system must use a modular architecture with separate audio-capture components for different operating systems while sharing the same transcription, AI processing, storage, and user-interface layers.",
+      "from_dimensions": [
+        "systems"
+      ],
+      "fulfilled_by": [
+        "STORY-015"
+      ]
+    },
+    {
+      "id": "REQ-085",
+      "kind": "FUNC",
+      "cluster": "Real-Time Speech-to-Text Transcription",
+      "priority": "must",
+      "statement": "The system must generate transcripts immediately after a meeting ends if real-time processing is unavailable.",
+      "from_dimensions": [
+        "desired_outcome"
+      ],
+      "fulfilled_by": [
+        "STORY-008"
+      ]
+    }
+  ],
+  "releases": [
+    {
+      "key": "r0",
+      "demo": "Demonstrate automatic meeting detection and audio capture with a clear indicator for active transcription.",
+      "goal": "Establish the core functionality of meeting detection and audio capture.",
+      "name": "Initial Setup and Detection",
+      "week_end": 4,
+      "week_start": 1,
+      "story_ids": [
+        "STORY-001",
+        "STORY-002",
+        "STORY-003",
+        "STORY-004",
+        "STORY-005",
+        "STORY-059"
+      ],
+      "starts_on": "2026-12-07",
+      "ends_on": "2026-12-28",
+      "is_demo_target": false,
+      "is_roadmap": false
+    },
+    {
+      "key": "r1",
+      "demo": "Show real-time transcription with speaker identification during a live meeting.",
+      "goal": "Enable real-time transcription with speaker identification and basic transcript management.",
+      "name": "Real-Time Transcription",
+      "week_end": 7,
+      "week_start": 5,
+      "story_ids": [
+        "STORY-006",
+        "STORY-007",
+        "STORY-008",
+        "STORY-009",
+        "STORY-010"
+      ],
+      "starts_on": "2026-12-31",
+      "ends_on": "2027-01-21",
+      "is_demo_target": true,
+      "is_roadmap": false
+    },
+    {
+      "key": "r2",
+      "demo": "Demonstrate audio capture with noise reduction and enhanced audio quality settings.",
+      "goal": "Implement audio device management and quality enhancement features.",
+      "name": "Audio Management and Enhancement",
+      "week_end": 15,
+      "week_start": 10,
+      "story_ids": [
+        "STORY-011",
+        "STORY-012",
+        "STORY-013",
+        "STORY-014",
+        "STORY-015",
+        "STORY-016",
+        "STORY-017"
+      ],
+      "starts_on": "2027-02-04",
+      "ends_on": "2027-03-18",
+      "is_demo_target": false,
+      "is_roadmap": true
+    },
+    {
+      "key": "r3",
+      "demo": "Show the dashboard with ongoing, recent, and historical meetings.",
+      "goal": "Introduce a centralized dashboard for meeting management and history access.",
+      "name": "Dashboard and Meeting History",
+      "week_end": 21,
+      "week_start": 17,
+      "story_ids": [
+        "STORY-018",
+        "STORY-019",
+        "STORY-020",
+        "STORY-021",
+        "STORY-022",
+        "STORY-060"
+      ],
+      "starts_on": "2027-03-25",
+      "ends_on": "2027-04-29",
+      "is_demo_target": false,
+      "is_roadmap": true
+    },
+    {
+      "key": "r4",
+      "demo": "Display AI-generated summaries and action items post-meeting.",
+      "goal": "Generate AI-powered meeting summaries and key discussion points.",
+      "name": "AI-Powered Summaries",
+      "week_end": 28,
+      "week_start": 23,
+      "story_ids": [
+        "STORY-023",
+        "STORY-024",
+        "STORY-025",
+        "STORY-026",
+        "STORY-027",
+        "STORY-028",
+        "STORY-029"
+      ],
+      "starts_on": "2027-05-06",
+      "ends_on": "2027-06-17",
+      "is_demo_target": false,
+      "is_roadmap": true
+    },
+    {
+      "key": "r5",
+      "demo": "Show confidence indicators and manual correction of transcript errors.",
+      "goal": "Enhance transcription accuracy and user interaction with transcripts.",
+      "name": "Advanced Transcription Features",
+      "week_end": 36,
+      "week_start": 30,
+      "story_ids": [
+        "STORY-030",
+        "STORY-031",
+        "STORY-032",
+        "STORY-033",
+        "STORY-034",
+        "STORY-035",
+        "STORY-036",
+        "STORY-037"
+      ],
+      "starts_on": "2027-06-24",
+      "ends_on": "2027-08-12",
+      "is_demo_target": false,
+      "is_roadmap": true
+    },
+    {
+      "key": "r6",
+      "demo": "Demonstrate automatic meeting categorization and project linking.",
+      "goal": "Implement meeting categorization and project-based organization.",
+      "name": "Meeting Intelligence and Organization",
+      "week_end": 44,
+      "week_start": 38,
+      "story_ids": [
+        "STORY-038",
+        "STORY-039",
+        "STORY-040",
+        "STORY-041",
+        "STORY-042",
+        "STORY-043",
+        "STORY-044",
+        "STORY-045"
+      ],
+      "starts_on": "2027-08-19",
+      "ends_on": "2027-10-07",
+      "is_demo_target": false,
+      "is_roadmap": true
+    },
+    {
+      "key": "r7",
+      "demo": "Ask the AI assistant questions about past meetings and receive contextual answers.",
+      "goal": "Introduce AI-powered search and question-answering capabilities.",
+      "name": "AI Assistant and Search",
+      "week_end": 49,
+      "week_start": 46,
+      "story_ids": [
+        "STORY-046",
+        "STORY-047",
+        "STORY-048",
+        "STORY-049",
+        "STORY-050"
+      ],
+      "starts_on": "2027-10-14",
+      "ends_on": "2027-11-11",
+      "is_demo_target": false,
+      "is_roadmap": true
+    },
+    {
+      "key": "r8",
+      "demo": "Show integration with Google Calendar and automatic export of summaries.",
+      "goal": "Enable integration with external applications and automate meeting-related tasks.",
+      "name": "Integration and Automation",
+      "week_end": 55,
+      "week_start": 51,
+      "story_ids": [
+        "STORY-051",
+        "STORY-052",
+        "STORY-053",
+        "STORY-054",
+        "STORY-055",
+        "STORY-056"
+      ],
+      "starts_on": "2027-11-18",
+      "ends_on": "2027-12-23",
+      "is_demo_target": false,
+      "is_roadmap": true
+    },
+    {
+      "key": "r9",
+      "demo": "Demonstrate secure data management and user-controlled privacy settings.",
+      "goal": "Strengthen privacy and security measures for data handling and processing.",
+      "name": "Privacy and Security Enhancements",
+      "week_end": 57,
+      "week_start": 57,
+      "story_ids": [
+        "STORY-057",
+        "STORY-058"
+      ],
+      "starts_on": "2027-12-30",
+      "ends_on": "2028-01-06",
+      "is_demo_target": false,
+      "is_roadmap": true
+    }
+  ],
+  "stories": [
+    {
+      "id": "STORY-001",
+      "title": "Automatic Meeting Detection and Audio Capture",
+      "release": "r0",
+      "fulfills": [
+        "REQ-001",
+        "REQ-002",
+        "REQ-018",
+        "REQ-020",
+        "REQ-027"
+      ],
+      "narrative": "As a user, I want the system to automatically detect when a meeting starts and capture audio, so that I can have a complete record of the meeting without manual intervention.",
+      "workspace": {
+        "ref": "Meeting Detection Engine",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given a supported platform is in use, when a meeting starts, then the system detects it and begins audio capture.",
+        "Given a meeting ends, when the system detects this, then it stops capturing audio.",
+        "Trust: When audio capture starts, an entry is logged indicating the meeting start and consent verification."
+      ],
+      "blocked_by": [],
+      "owner_agent": "system",
+      "failure_paths": [
+        "Meeting detection fails on a supported platform.",
+        "Audio capture does not start despite detection.",
+        "Audio capture continues after meeting ends."
+      ],
+      "task_guidance": "Implement meeting detection for Zoom, Google Meet, Microsoft Teams, Webex, Skype, and WhatsApp Desktop. Ensure audio capture uses system APIs to access microphone and system audio, respecting OS permissions.",
+      "due_on": "2026-12-07",
+      "due_baseline_on": "2026-12-07"
+    },
+    {
+      "id": "STORY-002",
+      "title": "System Tray Operation and Startup Configuration",
+      "release": "r0",
+      "fulfills": [
+        "REQ-025",
+        "REQ-026"
+      ],
+      "narrative": "As a user, I want the application to run quietly in the system tray and start automatically if enabled, so that it is always ready to detect meetings without manual startup.",
+      "workspace": {
+        "ref": "System Tray",
+        "kind": "workspace",
+        "action": null
+      },
+      "acceptance": [
+        "Given the user has enabled auto-start, when the laptop boots, then the application starts automatically and runs in the system tray.",
+        "Given the application is running, when the user checks the system tray, then the application is visible there.",
+        "Trust: When the application starts, an entry is logged indicating the startup mode (manual/automatic)."
+      ],
+      "blocked_by": [],
+      "owner_agent": "system",
+      "failure_paths": [
+        "Application fails to start automatically on boot.",
+        "Application does not appear in the system tray.",
+        "User cannot disable auto-start."
+      ],
+      "task_guidance": "Configure the application to register with the OS for auto-start and system tray operation. Use OS-specific APIs to manage tray icons and startup settings. Ask before building: \"OS-specific API\" is not among the tools this project names. Check with the project owner whether to use it or where that data already lives.",
+      "due_on": "2026-12-11",
+      "due_baseline_on": "2026-12-11"
+    },
+    {
+      "id": "STORY-003",
+      "title": "Notification System for Meeting Detection and Transcript Readiness",
+      "release": "r0",
+      "fulfills": [
+        "REQ-005"
+      ],
+      "narrative": "As a user, I want to receive notifications when a meeting is detected and when its transcript is ready, so that I am informed about the system's activities.",
+      "workspace": {
+        "ref": "Notification System",
+        "kind": "workspace",
+        "action": null
+      },
+      "acceptance": [
+        "Given a meeting is detected, when it starts, then the user receives a notification about the detection.",
+        "Given a transcript is ready, when the processing completes, then the user receives a notification about the transcript availability.",
+        "Trust: When a notification is sent, an entry is logged with the notification type and timestamp."
+      ],
+      "blocked_by": [],
+      "owner_agent": "system",
+      "failure_paths": [
+        "Notification fails to appear for meeting detection.",
+        "Notification fails to appear for transcript readiness.",
+        "Notifications are sent multiple times for the same event."
+      ],
+      "task_guidance": "Implement notification system using OS notification APIs. Ensure notifications are sent for meeting detection and transcript readiness. Ask before building: \"OS notification API\" is not among the tools this project names. Check with the project owner whether to use it or where that data already lives.",
+      "due_on": "2026-12-15",
+      "due_baseline_on": "2026-12-15"
+    },
+    {
+      "id": "STORY-004",
+      "title": "Clear Indicator for Active Audio Capture and Transcription",
+      "release": "r0",
+      "fulfills": [
+        "REQ-019"
+      ],
+      "narrative": "As a user, I want a clear indicator when audio capture or transcription is active, so that I am aware of the system's operations and can ensure privacy compliance.",
+      "workspace": {
+        "ref": "System Tray",
+        "kind": "workspace",
+        "action": "view indicator"
+      },
+      "acceptance": [
+        "Given audio capture is active, when the user checks the application, then a clear indicator is visible.",
+        "Given transcription is active, when the user checks the application, then a clear indicator is visible.",
+        "Trust: When the indicator changes state, an entry is logged with the current state and timestamp."
+      ],
+      "blocked_by": [],
+      "owner_agent": "system",
+      "failure_paths": [
+        "Indicator does not appear when audio capture is active.",
+        "Indicator does not appear when transcription is active.",
+        "Indicator remains on after activity stops."
+      ],
+      "task_guidance": "Design and implement a UI element that changes state based on audio capture and transcription activity. Ensure it is visible in the system tray or application interface.",
+      "due_on": "2026-12-18",
+      "due_baseline_on": "2026-12-18"
+    },
+    {
+      "id": "STORY-005",
+      "title": "Data Processing Transparency",
+      "release": "r0",
+      "fulfills": [
+        "REQ-067"
+      ],
+      "narrative": "As a user, I want clear information about what data is processed locally and what is sent to external services, so that I can make informed decisions about my data privacy.",
+      "workspace": {
+        "ref": "Settings",
+        "kind": "workspace",
+        "action": "view data processing"
+      },
+      "acceptance": [
+        "Given the user accesses the settings, when they view data processing information, then the system clearly distinguishes between local and external data processing.",
+        "Given the user reviews the data policy, when they check the application documentation, then it accurately reflects data processing practices.",
+        "Trust: When data processing settings are updated, an entry is logged with the changes and timestamp."
+      ],
+      "blocked_by": [],
+      "owner_agent": "system",
+      "failure_paths": [
+        "Data processing information is unclear or misleading.",
+        "Changes to data processing are not logged.",
+        "User cannot access data processing information."
+      ],
+      "task_guidance": "Provide a settings page or documentation section detailing data processing practices. Ensure clarity between local and external processing.",
+      "due_on": "2026-12-23",
+      "due_baseline_on": "2026-12-23"
+    },
+    {
+      "id": "STORY-006",
+      "title": "Real-Time Transcription with Speaker Identification",
+      "release": "r1",
+      "fulfills": [
+        "REQ-003",
+        "REQ-004",
+        "REQ-039",
+        "REQ-040",
+        "REQ-041"
+      ],
+      "narrative": "As a user, I want the system to generate real-time transcripts with speaker identification, so that I can follow the conversation accurately during a live meeting.",
+      "workspace": {
+        "ref": "Live Meeting View",
+        "kind": "workspace",
+        "action": null
+      },
+      "acceptance": [
+        "Given a live meeting is in progress, when the system captures audio, then it generates a real-time transcript with speaker identification and timestamps.",
+        "Given overlapping conversations occur, when the system processes the audio, then it maintains the chronological order and identifies speakers correctly.",
+        "Trust: Given a meeting is transcribed, when the transcript is saved, then it includes timestamps and speaker identification for audit purposes."
+      ],
+      "blocked_by": [
+        "STORY-005"
+      ],
+      "owner_agent": "transcription_service",
+      "failure_paths": [
+        "Audio capture fails due to device issues.",
+        "Speaker diarization fails to distinguish speakers.",
+        "Timestamps are not aligned with audio segments."
+      ],
+      "task_guidance": "Implement real-time transcription using the existing audio capture engine. Use speaker diarization to identify speakers and insert timestamps. Ensure the system handles overlapping conversations and maintains order.",
+      "due_on": "2026-12-31",
+      "due_baseline_on": "2026-12-31"
+    },
+    {
+      "id": "STORY-007",
+      "title": "Manual Transcript Correction and Audio Replay",
+      "release": "r1",
+      "fulfills": [
+        "REQ-021"
+      ],
+      "narrative": "As a user, I want to replay audio segments and manually correct transcript errors, so that I can ensure the transcript's accuracy.",
+      "workspace": {
+        "ref": "Meeting Details",
+        "kind": "workspace",
+        "action": "correct transcript"
+      },
+      "acceptance": [
+        "Given a transcript with errors, when a user selects an audio segment, then they can replay the audio and correct the transcript.",
+        "Given a corrected transcript, when the user saves changes, then the updated transcript is stored with the corrections.",
+        "Trust: Given a correction is made, when the transcript is saved, then the system logs the correction for audit purposes."
+      ],
+      "blocked_by": [
+        "STORY-005",
+        "STORY-006"
+      ],
+      "owner_agent": "transcription_service",
+      "failure_paths": [
+        "Audio segment fails to replay.",
+        "Transcript corrections are not saved.",
+        "User interface does not allow text selection."
+      ],
+      "task_guidance": "Provide an interface for users to select and replay audio segments. Allow text editing of the transcript and save changes to the database.",
+      "due_on": "2027-01-06",
+      "due_baseline_on": "2027-01-06"
+    },
+    {
+      "id": "STORY-008",
+      "title": "Post-Meeting Transcript Generation",
+      "release": "r1",
+      "fulfills": [
+        "REQ-085"
+      ],
+      "narrative": "As a user, I want the system to generate transcripts immediately after a meeting ends if real-time processing is unavailable, so that I have access to the meeting content.",
+      "workspace": {
+        "ref": "Post-Meeting Transcription Job",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given a meeting has ended, when real-time transcription was unavailable, then the system generates the transcript immediately.",
+        "Given a generated transcript, when the user accesses it, then it is available in the meeting history.",
+        "Trust: Given a transcript is generated post-meeting, when it is saved, then it includes timestamps and speaker identification for audit purposes."
+      ],
+      "blocked_by": [
+        "STORY-005",
+        "STORY-006"
+      ],
+      "owner_agent": "transcription_service",
+      "failure_paths": [
+        "Audio data is corrupted or missing.",
+        "Post-meeting transcription fails to start.",
+        "Generated transcript lacks speaker identification."
+      ],
+      "task_guidance": "Trigger post-meeting transcription using stored audio data if real-time processing was not completed. Ensure transcripts are saved with timestamps and speaker identification.",
+      "due_on": "2027-01-11",
+      "due_baseline_on": "2027-01-11"
+    },
+    {
+      "id": "STORY-009",
+      "title": "Transcript and Audio Encryption",
+      "release": "r1",
+      "fulfills": [
+        "REQ-016"
+      ],
+      "narrative": "As a user, I want the system to encrypt stored transcripts and audio recordings, so that my data is secure.",
+      "workspace": {
+        "ref": "Data Encryption Service",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given a transcript is saved, when it is stored, then it is encrypted using the specified encryption protocol.",
+        "Given an audio recording is saved, when it is stored, then it is encrypted using the specified encryption protocol.",
+        "Trust: Given encrypted data, when accessed, then it requires decryption keys for access."
+      ],
+      "blocked_by": [
+        "STORY-005",
+        "STORY-006"
+      ],
+      "owner_agent": "security_service",
+      "failure_paths": [
+        "Encryption fails due to incorrect key management.",
+        "Stored data is accessed without decryption.",
+        "Encryption process causes data corruption."
+      ],
+      "task_guidance": "Implement encryption for transcripts and audio recordings using AES-256. Ensure encryption is applied before data is stored.",
+      "due_on": "2027-01-15",
+      "due_baseline_on": "2027-01-15"
+    },
+    {
+      "id": "STORY-010",
+      "title": "Network and Application Crash Recovery",
+      "release": "r1",
+      "fulfills": [
+        "REQ-073",
+        "REQ-083"
+      ],
+      "narrative": "As a user, I want the system to handle network interruptions and recover from application crashes, so that transcription continues without data loss.",
+      "workspace": {
+        "ref": "Recovery Service",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given a network interruption occurs, when the connection is restored, then transcription resumes from the last saved point.",
+        "Given an application crash occurs, when the application restarts, then transcription resumes from the last saved point.",
+        "Trust: Given a recovery event, when transcription resumes, then the system logs the event for audit purposes."
+      ],
+      "blocked_by": [
+        "STORY-005",
+        "STORY-006"
+      ],
+      "owner_agent": "system_resilience_service",
+      "failure_paths": [
+        "Network interruption causes data loss.",
+        "Application crash results in incomplete transcription.",
+        "State checkpointing fails to save progress."
+      ],
+      "task_guidance": "Implement checkpointing to save transcription state periodically. Use local storage to resume transcription after network or application recovery.",
+      "due_on": "2027-01-21",
+      "due_baseline_on": "2027-01-21"
+    },
+    {
+      "id": "STORY-011",
+      "title": "Support for Multiple Audio Devices",
+      "release": "r2",
+      "fulfills": [
+        "REQ-010",
+        "REQ-029"
+      ],
+      "narrative": "As a user, I want the system to support various audio devices, so that I can use my preferred device for meetings.",
+      "workspace": {
+        "ref": "audio_device_detection",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given a user with multiple audio devices connected, when the system starts, then it must identify all available audio input and output devices.",
+        "Given a user switches from a built-in microphone to a Bluetooth headset during a meeting, when the system detects the change, then it must continue capturing audio without interruption.",
+        "Trust: The system logs all detected audio devices and any changes in device usage."
+      ],
+      "blocked_by": [
+        "STORY-010"
+      ],
+      "owner_agent": "development_team",
+      "failure_paths": [
+        "Device not detected",
+        "Audio capture interrupted during device switch",
+        "Incorrect device selected for capture"
+      ],
+      "task_guidance": "Implement device detection using platform-specific audio APIs. Ensure seamless switching between devices without losing audio capture. Ask before building: \"platform-specific audio API\" is not among the tools this project names. Check with the project owner whether to use it or where that data already lives.",
+      "due_on": "2027-02-04",
+      "due_baseline_on": "2027-02-04"
+    },
+    {
+      "id": "STORY-012",
+      "title": "Noise Reduction and Audio Enhancement",
+      "release": "r2",
+      "fulfills": [
+        "REQ-011"
+      ],
+      "narrative": "As a user, I want noise reduction and audio enhancement, so that my meeting recordings are clear and understandable.",
+      "workspace": {
+        "ref": "audio_processing_pipeline",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given a meeting with background noise, when the system captures audio, then it must apply noise reduction to enhance clarity.",
+        "Given a user enables audio enhancement settings, when the system processes audio, then it must enhance the audio quality according to the settings.",
+        "Trust: The system logs the application of noise reduction and enhancement settings for each audio capture session."
+      ],
+      "blocked_by": [
+        "STORY-010"
+      ],
+      "owner_agent": "development_team",
+      "failure_paths": [
+        "Noise reduction fails to apply",
+        "Audio enhancement distorts sound",
+        "Settings not applied correctly"
+      ],
+      "task_guidance": "Integrate noise reduction and audio enhancement algorithms into the audio processing pipeline. Test with various noise levels and enhancement settings.",
+      "due_on": "2027-02-11",
+      "due_baseline_on": "2027-02-11"
+    },
+    {
+      "id": "STORY-013",
+      "title": "Configurable Audio Quality Settings",
+      "release": "r2",
+      "fulfills": [
+        "REQ-012"
+      ],
+      "narrative": "As a user, I want to configure audio quality settings, so that I can tailor the audio output to my preferences.",
+      "workspace": {
+        "ref": "settings",
+        "kind": "workspace",
+        "action": "configure_audio_quality"
+      },
+      "acceptance": [
+        "Given a user accesses audio settings, when they adjust quality settings, then the system must apply these settings to subsequent audio captures.",
+        "Given a user sets a high-quality audio setting, when a meeting is recorded, then the audio must reflect the high-quality setting.",
+        "Trust: The system logs all changes to audio quality settings and their application to audio captures."
+      ],
+      "blocked_by": [
+        "STORY-010"
+      ],
+      "owner_agent": "development_team",
+      "failure_paths": [
+        "Settings not saved",
+        "Audio quality does not change",
+        "UI fails to load settings"
+      ],
+      "task_guidance": "Provide a user interface for adjusting audio quality settings. Ensure settings persist across sessions and are applied in real-time.",
+      "due_on": "2027-02-18",
+      "due_baseline_on": "2027-02-18"
+    },
+    {
+      "id": "STORY-014",
+      "title": "Adaptation to Different Audio Configurations",
+      "release": "r2",
+      "fulfills": [
+        "REQ-030"
+      ],
+      "narrative": "As a user, I want the system to adapt to different audio configurations, so that it works seamlessly in any setup.",
+      "workspace": {
+        "ref": "audio_configuration_adaptation",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given a user changes their audio configuration, when the system detects the change, then it must adapt without requiring a restart.",
+        "Given a user connects a new audio device mid-meeting, when the system detects the device, then it must switch to the new device seamlessly.",
+        "Trust: The system logs all configuration changes and adaptations made during audio capture."
+      ],
+      "blocked_by": [
+        "STORY-010",
+        "STORY-011"
+      ],
+      "owner_agent": "development_team",
+      "failure_paths": [
+        "Configuration change not detected",
+        "Audio capture interrupted during adaptation",
+        "Incorrect configuration applied"
+      ],
+      "task_guidance": "Implement dynamic audio configuration detection and adaptation using platform-specific APIs. Ensure seamless transitions between configurations. Ask before building: \"adaptation using platform-specific API\" is not among the tools this project names. Check with the project owner whether to use it or where that data already lives.",
+      "due_on": "2027-02-25",
+      "due_baseline_on": "2027-02-25"
+    },
+    {
+      "id": "STORY-015",
+      "title": "Handling OS-Specific Audio Capture Restrictions",
+      "release": "r2",
+      "fulfills": [
+        "REQ-031",
+        "REQ-084"
+      ],
+      "narrative": "As a developer, I want the system to handle OS-specific audio capture restrictions, so that it functions correctly across platforms.",
+      "workspace": {
+        "ref": "os_specific_audio_capture",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given a user on Windows, when the system captures audio, then it must comply with Windows-specific restrictions.",
+        "Given a user on macOS, when the system captures audio, then it must comply with macOS-specific restrictions.",
+        "Trust: The system logs compliance with OS-specific restrictions for each audio capture session."
+      ],
+      "blocked_by": [
+        "STORY-010",
+        "STORY-011"
+      ],
+      "owner_agent": "development_team",
+      "failure_paths": [
+        "OS restriction not handled",
+        "Audio capture fails on specific OS",
+        "Non-compliance with OS policies"
+      ],
+      "task_guidance": "Develop separate audio capture components for Windows, macOS, and Linux. Ensure compliance with each OS's restrictions and integrate with the shared layers.",
+      "due_on": "2027-03-04",
+      "due_baseline_on": "2027-03-04"
+    },
+    {
+      "id": "STORY-016",
+      "title": "Synchronization of Audio from Multiple Sources",
+      "release": "r2",
+      "fulfills": [
+        "REQ-032"
+      ],
+      "narrative": "As a user, I want the system to synchronize audio from multiple sources, so that all audio inputs are aligned in the recording.",
+      "workspace": {
+        "ref": "audio_synchronization",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given multiple audio sources are used, when the system captures audio, then it must synchronize the inputs to prevent misalignment.",
+        "Given a user reviews a synchronized recording, when they play it back, then the audio must be coherent and aligned.",
+        "Trust: The system logs synchronization status and any adjustments made during audio capture."
+      ],
+      "blocked_by": [
+        "STORY-010",
+        "STORY-011",
+        "STORY-014"
+      ],
+      "owner_agent": "development_team",
+      "failure_paths": [
+        "Audio sources not synchronized",
+        "Misalignment in recording",
+        "Synchronization logic fails"
+      ],
+      "task_guidance": "Implement audio synchronization logic to align inputs from multiple sources. Test with various configurations to ensure coherence.",
+      "due_on": "2027-03-11",
+      "due_baseline_on": "2027-03-11"
+    },
+    {
+      "id": "STORY-017",
+      "title": "Support for Different Audio Formats",
+      "release": "r2",
+      "fulfills": [
+        "REQ-033"
+      ],
+      "narrative": "As a user, I want the system to support different audio formats, so that I can choose the best format for my needs.",
+      "workspace": {
+        "ref": "settings",
+        "kind": "workspace",
+        "action": "select_audio_format"
+      },
+      "acceptance": [
+        "Given a user selects an audio format, when the system captures audio, then it must save the recording in the chosen format.",
+        "Given a user changes the audio format setting, when a new recording is made, then it must reflect the new format.",
+        "Trust: The system logs the selected audio format for each recording session."
+      ],
+      "blocked_by": [
+        "STORY-010",
+        "STORY-011",
+        "STORY-013"
+      ],
+      "owner_agent": "development_team",
+      "failure_paths": [
+        "Format not supported",
+        "Recording saved in wrong format",
+        "Format change not applied"
+      ],
+      "task_guidance": "Implement support for multiple audio formats in the recording module. Ensure format selection is user-friendly and persists across sessions.",
+      "due_on": "2027-03-18",
+      "due_baseline_on": "2027-03-18"
+    },
+    {
+      "id": "STORY-018",
+      "title": "Centralized Dashboard for Meeting Management",
+      "release": "r3",
+      "fulfills": [
+        "REQ-008",
+        "REQ-024",
+        "REQ-079"
+      ],
+      "narrative": "As a user, I want a centralized dashboard to manage my meetings, so that I can easily access ongoing, recent, and historical meetings.",
+      "workspace": {
+        "ref": "Meeting Dashboard",
+        "kind": "workspace",
+        "action": null
+      },
+      "acceptance": [
+        "Given the user is logged in, when they access the dashboard, then they should see sections for ongoing, recent, and historical meetings.",
+        "Given a meeting is ongoing, when the user views the dashboard, then the meeting should appear under the ongoing section with its details.",
+        "Trust: Given the user accesses the dashboard, then the system must log the access time and user ID for audit purposes."
+      ],
+      "blocked_by": [
+        "STORY-017"
+      ],
+      "owner_agent": "UI/UX Team",
+      "failure_paths": [
+        "Dashboard fails to load.",
+        "Meeting details are incorrect or missing.",
+        "Ongoing meetings do not update in real-time."
+      ],
+      "task_guidance": "Implement the dashboard UI with sections for ongoing, recent, and historical meetings. Ensure meeting details such as date, duration, participants, and platform are displayed.",
+      "due_on": "2027-03-25",
+      "due_baseline_on": "2027-03-25"
+    },
+    {
+      "id": "STORY-019",
+      "title": "Meeting Organization and Search",
+      "release": "r3",
+      "fulfills": [
+        "REQ-045",
+        "REQ-046",
+        "REQ-047"
+      ],
+      "narrative": "As a user, I want to organize and search my meetings, so that I can efficiently find and manage them.",
+      "workspace": {
+        "ref": "Meeting Dashboard",
+        "kind": "workspace",
+        "action": "search"
+      },
+      "acceptance": [
+        "Given meetings are organized into projects, when the user searches by project, then only meetings from that project should be displayed.",
+        "Given the user searches by date, topic, participant, or keyword, when results are returned, then they should match the search criteria.",
+        "Trust: Given a search is performed, then the system must log the search criteria and user ID for audit purposes."
+      ],
+      "blocked_by": [
+        "STORY-017",
+        "STORY-018"
+      ],
+      "owner_agent": "Backend Team",
+      "failure_paths": [
+        "Search returns no results when it should.",
+        "Search results are incorrect or incomplete.",
+        "Meeting organization fails to save."
+      ],
+      "task_guidance": "Implement backend support for organizing meetings into projects, categories, and folders. Enable search functionality by date, topic, participant, or keyword.",
+      "due_on": "2027-04-01",
+      "due_baseline_on": "2027-04-01"
+    },
+    {
+      "id": "STORY-020",
+      "title": "Meeting Data Management",
+      "release": "r3",
+      "fulfills": [
+        "REQ-017",
+        "REQ-049"
+      ],
+      "narrative": "As a user, I want to manage my meeting data, so that I can control my information and privacy.",
+      "workspace": {
+        "ref": "Meeting Dashboard",
+        "kind": "workspace",
+        "action": "manage data"
+      },
+      "acceptance": [
+        "Given a user wants to delete a meeting, when they confirm the deletion, then the meeting and its recordings should be permanently removed.",
+        "Given a user wants to export their data, when they choose the export option, then they should receive their data in a downloadable format.",
+        "Trust: Given a data deletion or export action, then the system must log the action and user ID for audit purposes."
+      ],
+      "blocked_by": [
+        "STORY-017",
+        "STORY-018"
+      ],
+      "owner_agent": "Data Management Team",
+      "failure_paths": [
+        "Data deletion fails or is incomplete.",
+        "Exported data is incorrect or incomplete.",
+        "User is unable to initiate data export."
+      ],
+      "task_guidance": "Implement functionality for permanent data deletion and data export. Ensure compliance with privacy requirements.",
+      "due_on": "2027-04-08",
+      "due_baseline_on": "2027-04-08"
+    },
+    {
+      "id": "STORY-021",
+      "title": "Download Meeting Transcripts",
+      "release": "r3",
+      "fulfills": [
+        "REQ-048"
+      ],
+      "narrative": "As a user, I want to download meeting transcripts in various formats, so that I can use them as needed.",
+      "workspace": {
+        "ref": "Meeting Dashboard",
+        "kind": "workspace",
+        "action": "download transcript"
+      },
+      "acceptance": [
+        "Given a user wants to download a transcript, when they select a format, then the transcript should be available in TXT, PDF, or DOCX format.",
+        "Given a user selects an unsupported format, when they attempt to download, then the system should display an error message.",
+        "Trust: Given a transcript download, then the system must log the download action and user ID for audit purposes."
+      ],
+      "blocked_by": [
+        "STORY-017",
+        "STORY-018"
+      ],
+      "owner_agent": "File Management Team",
+      "failure_paths": [
+        "Download fails or is incomplete.",
+        "Incorrect format is downloaded.",
+        "System does not log the download action."
+      ],
+      "task_guidance": "Implement transcript download functionality supporting TXT, PDF, and DOCX formats. Ensure error handling for unsupported formats.",
+      "due_on": "2027-04-15",
+      "due_baseline_on": "2027-04-15"
+    },
+    {
+      "id": "STORY-022",
+      "title": "Local and Cloud AI Processing Options",
+      "release": "r3",
+      "fulfills": [
+        "REQ-015"
+      ],
+      "narrative": "As a user, I want options for local and cloud AI processing, so that I can choose based on privacy and cost considerations.",
+      "workspace": {
+        "ref": "AI Processing",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given a user selects local processing, when a meeting is processed, then it should be handled locally without cloud interaction.",
+        "Given a user selects cloud processing, when a meeting is processed, then it should utilize cloud resources.",
+        "Trust: Given a processing option is selected, then the system must log the selection and user ID for audit purposes."
+      ],
+      "blocked_by": [
+        "STORY-017",
+        "STORY-018"
+      ],
+      "owner_agent": "AI Processing Team",
+      "failure_paths": [
+        "Processing option does not apply correctly.",
+        "Local processing fails due to resource constraints.",
+        "Cloud processing incurs unexpected costs."
+      ],
+      "task_guidance": "Implement options for local and cloud-based AI processing. Prioritize local processing where possible.",
+      "due_on": "2027-04-22",
+      "due_baseline_on": "2027-04-22"
+    },
+    {
+      "id": "STORY-023",
+      "title": "Generate AI-Powered Meeting Summaries",
+      "release": "r4",
+      "fulfills": [
+        "REQ-013",
+        "REQ-082"
+      ],
+      "narrative": "As a user, I want the system to generate AI-powered meeting summaries, so that I can quickly understand the key points and decisions from the meeting.",
+      "workspace": {
+        "ref": "Meeting Details",
+        "kind": "workspace",
+        "action": "view summary"
+      },
+      "acceptance": [
+        "Given a completed meeting, when the meeting ends, then the system generates a summary including key discussion points, decisions, and action items.",
+        "Given a completed meeting, when the system generates a summary, then the summary is saved automatically.",
+        "Trust: Given a generated summary, when it is saved, then it is logged with a timestamp and meeting ID."
+      ],
+      "blocked_by": [
+        "STORY-022"
+      ],
+      "owner_agent": "AI Engine",
+      "failure_paths": [
+        "AI fails to generate a summary",
+        "Summary generation takes too long",
+        "Summary is incomplete or inaccurate"
+      ],
+      "task_guidance": "Use the AI meeting intelligence engine to process transcripts and generate summaries. Ensure summaries are stored in the local database with meeting metadata.",
+      "due_on": "2027-05-06",
+      "due_baseline_on": "2027-05-06"
+    },
+    {
+      "id": "STORY-024",
+      "title": "Select Summary Formats Based on Meeting Type",
+      "release": "r4",
+      "fulfills": [
+        "REQ-014"
+      ],
+      "narrative": "As a user, I want to select different summary formats depending on the meeting type, so that the summary is relevant to the context of the meeting.",
+      "workspace": {
+        "ref": "Meeting Details",
+        "kind": "workspace",
+        "action": "select format"
+      },
+      "acceptance": [
+        "Given a meeting type selection, when a user selects a format, then the system generates a summary in the chosen format.",
+        "Given an unsupported meeting type, when a user selects a format, then the system provides a default summary format.",
+        "Trust: Given a format selection, when a summary is generated, then the format choice is logged with the meeting ID."
+      ],
+      "blocked_by": [
+        "STORY-022",
+        "STORY-023"
+      ],
+      "owner_agent": "User Interface",
+      "failure_paths": [
+        "User selects an invalid format",
+        "Format selection does not apply",
+        "Format selection is not saved"
+      ],
+      "task_guidance": "Implement a dropdown in the Meeting Details page to select summary formats. Use the AI engine to apply the selected format to the summary.",
+      "due_on": "2027-05-13",
+      "due_baseline_on": "2027-05-13"
+    },
+    {
+      "id": "STORY-025",
+      "title": "Support Post-Meeting Transcription",
+      "release": "r4",
+      "fulfills": [
+        "REQ-035",
+        "REQ-074"
+      ],
+      "narrative": "As a user, I want the system to support post-meeting transcription, so that I can have a transcript even if real-time processing was unavailable.",
+      "workspace": {
+        "ref": "Transcription Job",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given a completed meeting without real-time transcription, when the meeting ends, then the system processes and generates a transcript.",
+        "Given an ongoing transcription, when the system is interrupted, then it automatically saves the transcription progress.",
+        "Trust: Given a transcription process, when it completes, then it is logged with a timestamp and meeting ID."
+      ],
+      "blocked_by": [
+        "STORY-022"
+      ],
+      "owner_agent": "Transcription Engine",
+      "failure_paths": [
+        "Transcription fails to start",
+        "Progress is not saved",
+        "Transcript is incomplete"
+      ],
+      "task_guidance": "Use the transcription engine to process audio files post-meeting. Ensure progress is saved to the local database periodically.",
+      "due_on": "2027-05-20",
+      "due_baseline_on": "2027-05-20"
+    },
+    {
+      "id": "STORY-026",
+      "title": "Automatically Generate Meeting Titles",
+      "release": "r4",
+      "fulfills": [
+        "REQ-044"
+      ],
+      "narrative": "As a user, I want the system to automatically generate meeting titles based on discussion topics, so that I can easily identify meetings.",
+      "workspace": {
+        "ref": "Meeting Details",
+        "kind": "workspace",
+        "action": "view title"
+      },
+      "acceptance": [
+        "Given a completed meeting, when the system processes the transcript, then it generates a title based on discussion topics.",
+        "Given a meeting with no clear topics, when the system generates a title, then it uses a default naming convention.",
+        "Trust: Given a generated title, when it is saved, then it is logged with the meeting ID."
+      ],
+      "blocked_by": [
+        "STORY-022",
+        "STORY-023"
+      ],
+      "owner_agent": "AI Engine",
+      "failure_paths": [
+        "Title generation fails",
+        "Title is inaccurate",
+        "Title is not saved"
+      ],
+      "task_guidance": "Use the AI engine to analyze transcripts and extract key topics for title generation. Store titles in the local database with meeting metadata.",
+      "due_on": "2027-05-27",
+      "due_baseline_on": "2027-05-27"
+    },
+    {
+      "id": "STORY-027",
+      "title": "Generate Project-Level Discussion Summaries",
+      "release": "r4",
+      "fulfills": [
+        "REQ-060"
+      ],
+      "narrative": "As a project manager, I want the system to generate project-level discussion summaries, so that I can track project progress across meetings.",
+      "workspace": {
+        "ref": "Project Dashboard",
+        "kind": "workspace",
+        "action": "view project summary"
+      },
+      "acceptance": [
+        "Given multiple meetings within a project, when summaries are generated, then the system consolidates them into a project-level summary.",
+        "Given a project with no meetings, when a summary is requested, then the system indicates no data available.",
+        "Trust: Given a project-level summary, when it is generated, then it is logged with a project ID."
+      ],
+      "blocked_by": [
+        "STORY-022",
+        "STORY-023"
+      ],
+      "owner_agent": "AI Engine",
+      "failure_paths": [
+        "Project-level summary is incomplete",
+        "Aggregation fails",
+        "Summary is not saved"
+      ],
+      "task_guidance": "Use the AI engine to aggregate meeting summaries by project. Store project-level summaries in the local database with project metadata.",
+      "due_on": "2027-06-03",
+      "due_baseline_on": "2027-06-03"
+    },
+    {
+      "id": "STORY-028",
+      "title": "Automatically Categorize Meetings",
+      "release": "r4",
+      "fulfills": [
+        "REQ-062"
+      ],
+      "narrative": "As a user, I want the system to automatically categorize meetings, so that I can organize them efficiently.",
+      "workspace": {
+        "ref": "Meeting Details",
+        "kind": "workspace",
+        "action": "view category"
+      },
+      "acceptance": [
+        "Given a completed meeting, when the system processes the transcript, then it categorizes the meeting based on content.",
+        "Given a meeting with ambiguous content, when categorization is attempted, then the system uses a default category.",
+        "Trust: Given a categorized meeting, when it is saved, then the category is logged with the meeting ID."
+      ],
+      "blocked_by": [
+        "STORY-022",
+        "STORY-023"
+      ],
+      "owner_agent": "AI Engine",
+      "failure_paths": [
+        "Categorization fails",
+        "Category is inaccurate",
+        "Category is not saved"
+      ],
+      "task_guidance": "Use the AI engine to analyze transcripts and determine meeting categories. Store categories in the local database with meeting metadata.",
+      "due_on": "2027-06-10",
+      "due_baseline_on": "2027-06-10"
+    },
+    {
+      "id": "STORY-029",
+      "title": "Securely Manage API Keys and Authentication Credentials",
+      "release": "r4",
+      "fulfills": [
+        "REQ-066"
+      ],
+      "narrative": "As a system administrator, I want the system to securely manage API keys and authentication credentials, so that sensitive information is protected.",
+      "workspace": {
+        "ref": "Security Service",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given an API key, when it is stored, then it is encrypted using industry-standard encryption.",
+        "Given a request for an API key, when it is retrieved, then it is decrypted securely.",
+        "Trust: Given an API key operation, when it is performed, then it is logged with a timestamp and operation type."
+      ],
+      "blocked_by": [
+        "STORY-022"
+      ],
+      "owner_agent": "Security Module",
+      "failure_paths": [
+        "API key is not encrypted",
+        "Decryption fails",
+        "Unauthorized access attempt"
+      ],
+      "task_guidance": "Implement secure storage for API keys using encryption libraries. Ensure all access is logged and monitored. Ask before building: \"Securely Manage API\", \"securely manage API\", \"secure storage for API\" are not among the tools this project names. Check with the project owner whether to use them or where that data already lives.",
+      "due_on": "2027-06-17",
+      "due_baseline_on": "2027-06-17"
+    },
+    {
+      "id": "STORY-030",
+      "title": "Confidence Indicator for Uncertain Transcript Segments",
+      "release": "r5",
+      "fulfills": [
+        "REQ-022"
+      ],
+      "narrative": "As a user, I want to see confidence indicators for uncertain transcript segments, so that I can review and correct them if necessary.",
+      "workspace": {
+        "ref": "Transcript Review",
+        "kind": "workspace",
+        "action": "review"
+      },
+      "acceptance": [
+        "Given a transcript with uncertain segments, when the system detects low confidence, then it flags the segment for review.",
+        "Given a flagged segment, when the user reviews it, then they can see a confidence indicator.",
+        "Trust: Given a flagged segment, when the user corrects it, then the correction is logged in the audit trail."
+      ],
+      "blocked_by": [
+        "STORY-029"
+      ],
+      "owner_agent": "transcription_service",
+      "failure_paths": [
+        "Confidence score not calculated",
+        "Flag not displayed",
+        "Correction not logged"
+      ],
+      "task_guidance": "Implement confidence scoring in the transcription engine. Flag segments below a confidence threshold and display them in the transcript UI with an indicator.",
+      "due_on": "2027-06-24",
+      "due_baseline_on": "2027-06-24"
+    },
+    {
+      "id": "STORY-031",
+      "title": "Automatic Language Detection",
+      "release": "r5",
+      "fulfills": [
+        "REQ-036"
+      ],
+      "narrative": "As a user, I want the system to automatically detect the language being spoken, so that transcription is accurate without manual input.",
+      "workspace": {
+        "ref": "Language Detection Module",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given an audio input, when the language is spoken, then the system automatically detects the language.",
+        "Given a multilingual conversation, when different languages are spoken, then the system identifies each language correctly.",
+        "Trust: Given a detected language, when the transcript is generated, then the language detection is logged."
+      ],
+      "blocked_by": [
+        "STORY-029"
+      ],
+      "owner_agent": "transcription_service",
+      "failure_paths": [
+        "Language not detected",
+        "Incorrect language detected",
+        "Detection not logged"
+      ],
+      "task_guidance": "Integrate language detection module into the transcription engine to automatically identify spoken language at the start of transcription.",
+      "due_on": "2027-07-01",
+      "due_baseline_on": "2027-07-01"
+    },
+    {
+      "id": "STORY-032",
+      "title": "Support for Multilingual Conversations",
+      "release": "r5",
+      "fulfills": [
+        "REQ-037"
+      ],
+      "narrative": "As a user, I want the system to support multilingual conversations, so that all parts of the conversation are accurately transcribed.",
+      "workspace": {
+        "ref": "Transcript Review",
+        "kind": "workspace",
+        "action": "review"
+      },
+      "acceptance": [
+        "Given a multilingual conversation, when the system transcribes, then it accurately transcribes each language spoken.",
+        "Given a conversation in multiple languages, when the user reviews the transcript, then each language is correctly identified and transcribed.",
+        "Trust: Given a multilingual transcript, when reviewed, then language transitions are logged."
+      ],
+      "blocked_by": [
+        "STORY-029",
+        "STORY-031"
+      ],
+      "owner_agent": "transcription_service",
+      "failure_paths": [
+        "Language transitions not detected",
+        "Incorrect transcription of languages",
+        "Transitions not logged"
+      ],
+      "task_guidance": "Enhance the transcription engine to handle multiple languages in a single session, ensuring accurate transcription and language tagging.",
+      "due_on": "2027-07-08",
+      "due_baseline_on": "2027-07-08"
+    },
+    {
+      "id": "STORY-033",
+      "title": "Recognition of Technical Terminology and Industry Vocabulary",
+      "release": "r5",
+      "fulfills": [
+        "REQ-038"
+      ],
+      "narrative": "As a user, I want the system to recognize technical terminology and industry-specific vocabulary, so that transcripts are accurate and relevant.",
+      "workspace": {
+        "ref": "Vocabulary Enhancement Module",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given a conversation with technical terms, when transcribed, then the system accurately recognizes and transcribes the terms.",
+        "Given a conversation with industry-specific vocabulary, when transcribed, then the system accurately recognizes and transcribes the vocabulary.",
+        "Trust: Given a transcript with technical terms, when reviewed, then recognized terms are logged."
+      ],
+      "blocked_by": [
+        "STORY-029"
+      ],
+      "owner_agent": "transcription_service",
+      "failure_paths": [
+        "Terms not recognized",
+        "Incorrect transcription of terms",
+        "Recognition not logged"
+      ],
+      "task_guidance": "Integrate a vocabulary enhancement module into the transcription engine to recognize and transcribe technical and industry-specific terms accurately.",
+      "due_on": "2027-07-15",
+      "due_baseline_on": "2027-07-15"
+    },
+    {
+      "id": "STORY-034",
+      "title": "Regenerate or Improve Transcripts",
+      "release": "r5",
+      "fulfills": [
+        "REQ-042"
+      ],
+      "narrative": "As a user, I want the ability to regenerate or improve transcripts, so that I can ensure accuracy and completeness.",
+      "workspace": {
+        "ref": "Transcript Review",
+        "kind": "workspace",
+        "action": "regenerate"
+      },
+      "acceptance": [
+        "Given an existing transcript, when the user requests regeneration, then the system regenerates the transcript.",
+        "Given a transcript with errors, when the user requests improvement, then the system improves the transcript.",
+        "Trust: Given a regenerated transcript, when reviewed, then changes are logged."
+      ],
+      "blocked_by": [
+        "STORY-029"
+      ],
+      "owner_agent": "transcription_service",
+      "failure_paths": [
+        "Regeneration fails",
+        "Improvement not applied",
+        "Changes not logged"
+      ],
+      "task_guidance": "Provide a user interface option to regenerate or improve transcripts, leveraging the transcription engine to reprocess audio as needed.",
+      "due_on": "2027-07-22",
+      "due_baseline_on": "2027-07-22"
+    },
+    {
+      "id": "STORY-035",
+      "title": "Ensure Readable and Structured Transcripts",
+      "release": "r5",
+      "fulfills": [
+        "REQ-043"
+      ],
+      "narrative": "As a user, I want transcripts to be readable and properly structured, so that they are easy to understand and use.",
+      "workspace": {
+        "ref": "Transcript Review",
+        "kind": "workspace",
+        "action": "format"
+      },
+      "acceptance": [
+        "Given a transcript, when generated, then it is formatted with clear speaker identification and timestamps.",
+        "Given a transcript, when reviewed, then it is structured with paragraphs and punctuation.",
+        "Trust: Given a structured transcript, when reviewed, then formatting changes are logged."
+      ],
+      "blocked_by": [
+        "STORY-029"
+      ],
+      "owner_agent": "transcription_service",
+      "failure_paths": [
+        "Formatting not applied",
+        "Incorrect speaker identification",
+        "Changes not logged"
+      ],
+      "task_guidance": "Enhance the transcription output to ensure readability by applying formatting rules for speaker identification, timestamps, and paragraph structuring.",
+      "due_on": "2027-07-29",
+      "due_baseline_on": "2027-07-29"
+    },
+    {
+      "id": "STORY-036",
+      "title": "Support Offline Transcription",
+      "release": "r5",
+      "fulfills": [
+        "REQ-075"
+      ],
+      "narrative": "As a user, I want the system to support offline transcription, so that I can transcribe audio without an internet connection.",
+      "workspace": {
+        "ref": "Offline Transcription Module",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given an audio file, when processed offline, then the system transcribes it without internet access.",
+        "Given a lack of internet connection, when transcription is requested, then the system processes the audio offline.",
+        "Trust: Given an offline transcription, when completed, then the process is logged."
+      ],
+      "blocked_by": [
+        "STORY-029"
+      ],
+      "owner_agent": "transcription_service",
+      "failure_paths": [
+        "Offline processing fails",
+        "Transcription not completed",
+        "Process not logged"
+      ],
+      "task_guidance": "Implement offline transcription capabilities using local processing resources, ensuring the transcription engine can operate without internet connectivity.",
+      "due_on": "2027-08-05",
+      "due_baseline_on": "2027-08-05"
+    },
+    {
+      "id": "STORY-037",
+      "title": "Audio Retention Options",
+      "release": "r5",
+      "fulfills": [
+        "REQ-078"
+      ],
+      "narrative": "As a user, I want to choose whether original audio recordings are retained or deleted after transcription, so that I can manage storage and privacy.",
+      "workspace": {
+        "ref": "Audio Management",
+        "kind": "workspace",
+        "action": "set retention preferences"
+      },
+      "acceptance": [
+        "Given a completed transcription, when the user chooses to retain audio, then the audio is stored.",
+        "Given a completed transcription, when the user chooses to delete audio, then the audio is deleted.",
+        "Trust: Given a user choice on audio retention, when executed, then the action is logged."
+      ],
+      "blocked_by": [
+        "STORY-029"
+      ],
+      "owner_agent": "transcription_service",
+      "failure_paths": [
+        "Retention choice not applied",
+        "Audio not deleted",
+        "Action not logged"
+      ],
+      "task_guidance": "Provide user interface options for audio retention preferences, ensuring choices are respected and actions are logged.",
+      "due_on": "2027-08-12",
+      "due_baseline_on": "2027-08-12"
+    },
+    {
+      "id": "STORY-038",
+      "title": "Identify Related Meetings",
+      "release": "r6",
+      "fulfills": [
+        "REQ-053"
+      ],
+      "narrative": "As a user, I want the system to identify related meetings, so that I can easily track ongoing discussions across multiple sessions.",
+      "workspace": {
+        "ref": "Meeting Relationship Processor",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given a series of meetings with overlapping participants and topics, when the system processes these meetings, then it should identify them as related.",
+        "Given a meeting with no similar topics or participants, when processed, then it should not be marked as related to others.",
+        "Trust: The system logs the criteria used to determine meeting relationships."
+      ],
+      "blocked_by": [
+        "STORY-037"
+      ],
+      "owner_agent": "AI Engine",
+      "failure_paths": [
+        "Incorrectly identifies unrelated meetings as related",
+        "Fails to identify related meetings",
+        "Logs incorrect criteria for relationships"
+      ],
+      "task_guidance": "Use the AI engine to analyze meeting transcripts and metadata to identify related meetings based on participant overlap and topic similarity.",
+      "due_on": "2027-08-19",
+      "due_baseline_on": "2027-08-19"
+    },
+    {
+      "id": "STORY-039",
+      "title": "Connect Conversations to Projects",
+      "release": "r6",
+      "fulfills": [
+        "REQ-054"
+      ],
+      "narrative": "As a user, I want the system to connect conversations to projects, so that I can view all discussions related to a specific project in one place.",
+      "workspace": {
+        "ref": "Project Linker",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given a meeting transcript with project references, when processed, then the system should link it to the appropriate project.",
+        "Given a meeting transcript without project references, when processed, then it should not be linked to any project.",
+        "Trust: The system logs the project linkage decisions and criteria."
+      ],
+      "blocked_by": [
+        "STORY-037",
+        "STORY-038"
+      ],
+      "owner_agent": "AI Engine",
+      "failure_paths": [
+        "Fails to link a meeting to the correct project",
+        "Incorrectly links a meeting to an unrelated project",
+        "Logs incorrect project linkage criteria"
+      ],
+      "task_guidance": "Utilize project keywords and context from transcripts to associate meetings with projects. Verify project references against existing project data.",
+      "due_on": "2027-08-26",
+      "due_baseline_on": "2027-08-26"
+    },
+    {
+      "id": "STORY-040",
+      "title": "Track Decisions Across Meetings",
+      "release": "r6",
+      "fulfills": [
+        "REQ-055"
+      ],
+      "narrative": "As a user, I want the system to track decisions across meetings, so that I can see how decisions evolve over time.",
+      "workspace": {
+        "ref": "Decision Tracker",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given a series of meetings with decisions made, when processed, then the system should track these decisions across meetings.",
+        "Given a meeting with no decisions, when processed, then it should not add any decision tracking entries.",
+        "Trust: The system logs decision tracking entries and their sources."
+      ],
+      "blocked_by": [
+        "STORY-037",
+        "STORY-039"
+      ],
+      "owner_agent": "AI Engine",
+      "failure_paths": [
+        "Fails to track a decision across meetings",
+        "Incorrectly logs decisions",
+        "Logs incorrect decision sources"
+      ],
+      "task_guidance": "Implement decision extraction from transcripts and maintain a decision log that tracks changes and confirmations across meetings.",
+      "due_on": "2027-09-02",
+      "due_baseline_on": "2027-09-02"
+    },
+    {
+      "id": "STORY-041",
+      "title": "Identify Changes in Agreed Plans",
+      "release": "r6",
+      "fulfills": [
+        "REQ-056"
+      ],
+      "narrative": "As a user, I want the system to identify changes in previously agreed plans, so that I can manage project adjustments effectively.",
+      "workspace": {
+        "ref": "Plan Change Identifier",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given a meeting where a previously agreed plan is changed, when processed, then the system should identify and log the change.",
+        "Given a meeting with no changes to plans, when processed, then it should not log any changes.",
+        "Trust: The system logs changes with references to the original agreements."
+      ],
+      "blocked_by": [
+        "STORY-037",
+        "STORY-040"
+      ],
+      "owner_agent": "AI Engine",
+      "failure_paths": [
+        "Fails to identify a change in plans",
+        "Incorrectly identifies a change where none exists",
+        "Logs incorrect change references"
+      ],
+      "task_guidance": "Analyze meeting transcripts for changes in language indicating plan adjustments and compare against logged decisions.",
+      "due_on": "2027-09-09",
+      "due_baseline_on": "2027-09-09"
+    },
+    {
+      "id": "STORY-042",
+      "title": "Track Recurring Action Items",
+      "release": "r6",
+      "fulfills": [
+        "REQ-057"
+      ],
+      "narrative": "As a user, I want the system to track recurring action items, so that I can ensure ongoing tasks are completed.",
+      "workspace": {
+        "ref": "Action Item Tracker",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given a recurring action item discussed in multiple meetings, when processed, then the system should track its recurrence.",
+        "Given a non-recurring action item, when processed, then it should not be tracked as recurring.",
+        "Trust: The system logs recurrence patterns and action item status."
+      ],
+      "blocked_by": [
+        "STORY-037",
+        "STORY-041"
+      ],
+      "owner_agent": "AI Engine",
+      "failure_paths": [
+        "Fails to track a recurring action item",
+        "Incorrectly logs non-recurring items as recurring",
+        "Logs incorrect recurrence patterns"
+      ],
+      "task_guidance": "Identify action items in transcripts and track their recurrence using pattern recognition and historical data.",
+      "due_on": "2027-09-16",
+      "due_baseline_on": "2027-09-16"
+    },
+    {
+      "id": "STORY-043",
+      "title": "Highlight Unresolved Issues Across Meetings",
+      "release": "r6",
+      "fulfills": [
+        "REQ-058"
+      ],
+      "narrative": "As a user, I want the system to highlight unresolved issues across meetings, so that I can address them promptly.",
+      "workspace": {
+        "ref": "Issue Highlighter",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given unresolved issues discussed in multiple meetings, when processed, then the system should highlight these issues.",
+        "Given resolved issues, when processed, then they should not be highlighted as unresolved.",
+        "Trust: The system logs unresolved issues with references to meetings where they were discussed."
+      ],
+      "blocked_by": [
+        "STORY-037",
+        "STORY-042"
+      ],
+      "owner_agent": "AI Engine",
+      "failure_paths": [
+        "Fails to highlight an unresolved issue",
+        "Incorrectly highlights resolved issues",
+        "Logs incorrect issue references"
+      ],
+      "task_guidance": "Use natural language processing to detect unresolved issues in transcripts and maintain a log of these issues across meetings.",
+      "due_on": "2027-09-23",
+      "due_baseline_on": "2027-09-23"
+    },
+    {
+      "id": "STORY-044",
+      "title": "Identify Completed and Pending Tasks",
+      "release": "r6",
+      "fulfills": [
+        "REQ-059"
+      ],
+      "narrative": "As a user, I want the system to identify completed and pending tasks based on discussions, so that I can manage task progress effectively.",
+      "workspace": {
+        "ref": "Task Status Identifier",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given tasks discussed in meetings, when processed, then the system should identify their completion status.",
+        "Given tasks not discussed, when processed, then they should not have their status updated.",
+        "Trust: The system logs task status changes with references to relevant discussions."
+      ],
+      "blocked_by": [
+        "STORY-037",
+        "STORY-043"
+      ],
+      "owner_agent": "AI Engine",
+      "failure_paths": [
+        "Fails to identify a completed task",
+        "Incorrectly marks a pending task as completed",
+        "Logs incorrect task status changes"
+      ],
+      "task_guidance": "Analyze transcripts to identify task status updates and maintain a task log reflecting these updates.",
+      "due_on": "2027-09-30",
+      "due_baseline_on": "2027-09-30"
+    },
+    {
+      "id": "STORY-045",
+      "title": "Remind Users About Deadlines",
+      "release": "r6",
+      "fulfills": [
+        "REQ-061"
+      ],
+      "narrative": "As a user, I want the system to remind me about deadlines extracted from conversations, so that I can meet project timelines.",
+      "workspace": {
+        "ref": "Deadline Reminder System",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given a deadline mentioned in a meeting, when processed, then the system should remind the user about it before the due date.",
+        "Given no deadlines mentioned, when processed, then no reminders should be sent.",
+        "Trust: The system logs reminders sent and their corresponding deadlines."
+      ],
+      "blocked_by": [
+        "STORY-037",
+        "STORY-044"
+      ],
+      "owner_agent": "Notification System",
+      "failure_paths": [
+        "Fails to send a reminder for a deadline",
+        "Incorrectly sends a reminder for a non-existent deadline",
+        "Logs incorrect reminder details"
+      ],
+      "task_guidance": "Extract deadlines from transcripts and schedule reminders using the notification system.",
+      "due_on": "2027-10-07",
+      "due_baseline_on": "2027-10-07"
+    },
+    {
+      "id": "STORY-046",
+      "title": "Manual Control of Transcription",
+      "release": "r7",
+      "fulfills": [
+        "REQ-006"
+      ],
+      "narrative": "As a user, I want to manually start, pause, resume, or stop transcription, so that I have control over when my meetings are transcribed.",
+      "workspace": {
+        "ref": "Live Meeting View",
+        "kind": "workspace",
+        "action": "transcription controls"
+      },
+      "acceptance": [
+        "Given a meeting is detected, when I manually start transcription, then the system begins transcribing the meeting.",
+        "Given transcription is ongoing, when I pause transcription, then the system stops transcribing until resumed.",
+        "Trust: Given transcription is paused, when I resume transcription, then the system continues transcribing from where it left off."
+      ],
+      "blocked_by": [
+        "STORY-045"
+      ],
+      "owner_agent": "User",
+      "failure_paths": [
+        "User attempts to start transcription without a detected meeting.",
+        "User pauses transcription and forgets to resume.",
+        "User stops transcription and expects it to resume automatically."
+      ],
+      "task_guidance": "Implement manual controls in the meeting interface to start, pause, resume, and stop transcription. Ensure these controls are accessible during any detected meeting.",
+      "due_on": "2027-10-14",
+      "due_baseline_on": "2027-10-14"
+    },
+    {
+      "id": "STORY-047",
+      "title": "AI Assistant for Contextual Search",
+      "release": "r7",
+      "fulfills": [
+        "REQ-050",
+        "REQ-051",
+        "REQ-080"
+      ],
+      "narrative": "As a user, I want to ask the AI assistant questions about past meetings, so that I can receive contextual answers and references.",
+      "workspace": {
+        "ref": "AI Chat Assistant",
+        "kind": "workspace",
+        "action": null
+      },
+      "acceptance": [
+        "Given a question about a past meeting, when I ask the AI assistant, then it provides a contextual answer with references to the original meeting.",
+        "Given a question about a past meeting, when the AI assistant cannot find relevant information, then it informs the user that no data is available.",
+        "Trust: Given an AI-generated answer, when I view the references, then they include speaker names and timestamps."
+      ],
+      "blocked_by": [
+        "STORY-045",
+        "STORY-046"
+      ],
+      "owner_agent": "User",
+      "failure_paths": [
+        "AI assistant fails to retrieve relevant information.",
+        "AI assistant provides incorrect references.",
+        "AI assistant does not distinguish between discussed and interpreted information."
+      ],
+      "task_guidance": "Develop the AI assistant interface in the AI Chat Assistant section. Integrate with the transcript database to retrieve relevant information and provide references.",
+      "due_on": "2027-10-21",
+      "due_baseline_on": "2027-10-21"
+    },
+    {
+      "id": "STORY-048",
+      "title": "Distinguish AI Interpretations from Discussed Information",
+      "release": "r7",
+      "fulfills": [
+        "REQ-052"
+      ],
+      "narrative": "As a user, I want the system to distinguish between explicitly discussed information and AI-generated interpretations, so that I can trust the accuracy of the information provided.",
+      "workspace": {
+        "ref": "AI Chat Assistant",
+        "kind": "workspace",
+        "action": null
+      },
+      "acceptance": [
+        "Given an AI-generated answer, when the answer includes interpretations, then the system clearly labels them as interpretations.",
+        "Given an AI-generated answer, when the answer is based solely on discussed information, then the system does not label it as an interpretation.",
+        "Trust: Given a mixed answer, when I view the details, then the system distinguishes between discussed facts and interpretations."
+      ],
+      "blocked_by": [
+        "STORY-045",
+        "STORY-047"
+      ],
+      "owner_agent": "User",
+      "failure_paths": [
+        "System fails to label interpretations.",
+        "System incorrectly labels discussed information as interpretations.",
+        "User cannot distinguish between facts and interpretations."
+      ],
+      "task_guidance": "Implement a labeling system within the AI assistant to differentiate between discussed information and AI interpretations. Ensure clarity in the AI Chat Assistant interface.",
+      "due_on": "2027-10-28",
+      "due_baseline_on": "2027-10-28"
+    },
+    {
+      "id": "STORY-049",
+      "title": "Switch Between Local and Cloud AI Processing",
+      "release": "r7",
+      "fulfills": [
+        "REQ-076"
+      ],
+      "narrative": "As a user, I want to switch between local and cloud AI processing, so that I can choose the best option for my privacy and performance needs.",
+      "workspace": {
+        "ref": "Settings",
+        "kind": "workspace",
+        "action": "AI processing mode"
+      },
+      "acceptance": [
+        "Given the system settings, when I select local processing, then the system processes AI tasks locally.",
+        "Given the system settings, when I select cloud processing, then the system processes AI tasks in the cloud.",
+        "Trust: Given a processing mode change, when I view the system status, then it reflects the current processing mode."
+      ],
+      "blocked_by": [
+        "STORY-045",
+        "STORY-048"
+      ],
+      "owner_agent": "User",
+      "failure_paths": [
+        "User selects local processing but system defaults to cloud.",
+        "User selects cloud processing but system fails to connect to cloud services.",
+        "System does not update processing mode status."
+      ],
+      "task_guidance": "Add options in the Settings section to toggle between local and cloud AI processing. Ensure the system status reflects the current mode accurately.",
+      "due_on": "2027-11-04",
+      "due_baseline_on": "2027-11-04"
+    },
+    {
+      "id": "STORY-050",
+      "title": "Consolidated History of Discussions and Decisions",
+      "release": "r7",
+      "fulfills": [
+        "REQ-081"
+      ],
+      "narrative": "As a user, I want the system to automatically connect related conversations to projects and provide a consolidated history of discussions, decisions, and progress, so that I can easily track project developments.",
+      "workspace": {
+        "ref": "Meeting Details",
+        "kind": "workspace",
+        "action": "view project history"
+      },
+      "acceptance": [
+        "Given related meetings, when I view a project, then the system shows a consolidated history of discussions and decisions.",
+        "Given a project history, when a new related meeting occurs, then the system updates the history with new discussions and decisions.",
+        "Trust: Given a project history, when I view it, then it accurately reflects all related meetings and decisions."
+      ],
+      "blocked_by": [
+        "STORY-045",
+        "STORY-049"
+      ],
+      "owner_agent": "User",
+      "failure_paths": [
+        "System fails to connect related meetings.",
+        "System incorrectly associates unrelated meetings.",
+        "System does not update project history with new meetings."
+      ],
+      "task_guidance": "Implement project linking in the Meeting Details section. Use existing meeting data to connect related conversations and update project histories.",
+      "due_on": "2027-11-11",
+      "due_baseline_on": "2027-11-11"
+    },
+    {
+      "id": "STORY-051",
+      "title": "Exclude Specific Applications from Automatic Detection",
+      "release": "r8",
+      "fulfills": [
+        "REQ-007"
+      ],
+      "narrative": "As a user, I want to exclude specific applications from automatic detection, so that I can control which applications are monitored.",
+      "workspace": {
+        "ref": "Settings",
+        "kind": "workspace",
+        "action": "exclude application"
+      },
+      "acceptance": [
+        "Given the application settings, When I exclude an application from detection, Then the system does not detect meetings from that application.",
+        "Given the application settings, When I attempt to exclude an unsupported application, Then the system notifies me that exclusion is not possible.",
+        "Trust: Given an excluded application, When a meeting starts, Then the system logs that the application was excluded from detection."
+      ],
+      "blocked_by": [
+        "STORY-050"
+      ],
+      "owner_agent": "user",
+      "failure_paths": [
+        "User tries to exclude an application not installed.",
+        "User excludes an application but it still gets detected.",
+        "Exclusion list fails to save after application restart."
+      ],
+      "task_guidance": "Implement exclusion logic in the settings module, ensuring that the list of applications is updated in real-time and stored persistently.",
+      "due_on": "2027-11-18",
+      "due_baseline_on": "2027-11-18"
+    },
+    {
+      "id": "STORY-052",
+      "title": "Export Meeting Summaries to External Applications",
+      "release": "r8",
+      "fulfills": [
+        "REQ-023"
+      ],
+      "narrative": "As a user, I want to export meeting summaries and action items to external productivity applications, so that I can manage my tasks efficiently.",
+      "workspace": {
+        "ref": "Meeting Details",
+        "kind": "workspace",
+        "action": "export summary"
+      },
+      "acceptance": [
+        "Given a completed meeting summary, When I choose to export it, Then the system exports to Google Calendar and other selected applications.",
+        "Given a completed meeting summary, When I attempt to export to an unsupported application, Then the system notifies me of the limitation.",
+        "Trust: Given an export action, When it completes, Then the system logs the export details including destination and timestamp."
+      ],
+      "blocked_by": [
+        "STORY-050",
+        "STORY-051"
+      ],
+      "owner_agent": "user",
+      "failure_paths": [
+        "Export fails due to network issues.",
+        "User selects an unsupported application for export.",
+        "Exported data is incomplete or corrupted."
+      ],
+      "task_guidance": "Use the APIs of Google Calendar, Microsoft Outlook, Google Drive, OneDrive, Notion, Slack, Microsoft Teams, Trello, Asana, Jira, and Basecamp to implement export functionality.",
+      "due_on": "2027-11-24",
+      "due_baseline_on": "2027-11-24"
+    },
+    {
+      "id": "STORY-053",
+      "title": "Detect Active Communication via Audio Activity",
+      "release": "r8",
+      "fulfills": [
+        "REQ-028",
+        "REQ-034",
+        "REQ-072"
+      ],
+      "narrative": "As a user, I want the system to detect active communication through audio activity, so that meetings can be captured even if not on a known platform.",
+      "workspace": {
+        "ref": "Audio Detection Service",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given system audio activity, When a meeting starts, Then the system detects and begins transcription.",
+        "Given microphone usage, When no meeting is detected, Then the system does not start transcription.",
+        "Trust: Given an active communication detection, When it occurs, Then the system logs the detection event with audio synchronization details."
+      ],
+      "blocked_by": [
+        "STORY-050",
+        "STORY-052"
+      ],
+      "owner_agent": "user",
+      "failure_paths": [
+        "False positives from non-meeting audio.",
+        "High CPU usage during detection.",
+        "Audio synchronization issues."
+      ],
+      "task_guidance": "Implement audio activity detection using system audio and microphone usage metrics, ensuring minimal resource consumption and reliable synchronization.",
+      "due_on": "2027-12-02",
+      "due_baseline_on": "2027-12-02"
+    },
+    {
+      "id": "STORY-054",
+      "title": "Configure Notification Preferences",
+      "release": "r8",
+      "fulfills": [
+        "REQ-063"
+      ],
+      "narrative": "As a user, I want to configure my notification preferences, so that I can control how and when I receive alerts.",
+      "workspace": {
+        "ref": "Settings",
+        "kind": "workspace",
+        "action": "configure notifications"
+      },
+      "acceptance": [
+        "Given the notification settings, When I configure preferences, Then the system updates my notification settings accordingly.",
+        "Given the notification settings, When I disable all notifications, Then the system does not send any alerts.",
+        "Trust: Given a notification configuration change, When it is saved, Then the system logs the change with a timestamp."
+      ],
+      "blocked_by": [
+        "STORY-050",
+        "STORY-053"
+      ],
+      "owner_agent": "user",
+      "failure_paths": [
+        "Notification settings fail to save.",
+        "User receives notifications despite disabling them.",
+        "Incorrect notification settings applied."
+      ],
+      "task_guidance": "Provide a user interface in the settings module for configuring notification preferences, ensuring changes are saved and applied immediately.",
+      "due_on": "2027-12-09",
+      "due_baseline_on": "2027-12-09"
+    },
+    {
+      "id": "STORY-055",
+      "title": "Choose External Applications for Integration",
+      "release": "r8",
+      "fulfills": [
+        "REQ-064"
+      ],
+      "narrative": "As a user, I want to choose which external applications to connect, so that I can integrate only the tools I use.",
+      "workspace": {
+        "ref": "Settings",
+        "kind": "workspace",
+        "action": "choose integrations"
+      },
+      "acceptance": [
+        "Given the integration settings, When I select applications for integration, Then the system connects to the chosen applications.",
+        "Given the integration settings, When I deselect an application, Then the system disconnects from that application.",
+        "Trust: Given an integration change, When it is saved, Then the system logs the change with application details."
+      ],
+      "blocked_by": [
+        "STORY-050",
+        "STORY-054"
+      ],
+      "owner_agent": "user",
+      "failure_paths": [
+        "Integration fails due to incorrect API keys.",
+        "User cannot deselect an application once connected.",
+        "Integration settings do not persist after restart."
+      ],
+      "task_guidance": "Implement integration selection in the settings module, using APIs for Google Calendar, Microsoft Outlook, Google Drive, OneDrive, Notion, Slack, Microsoft Teams, Trello, Asana, Jira, and Basecamp. Ask before building: \"due to incorrect API\" is not among the tools this project names. Check with the project owner whether to use it or where that data already lives.",
+      "due_on": "2027-12-16",
+      "due_baseline_on": "2027-12-16"
+    },
+    {
+      "id": "STORY-056",
+      "title": "Ensure Scalable Architecture for Future Features",
+      "release": "r8",
+      "fulfills": [
+        "REQ-077"
+      ],
+      "narrative": "As a developer, I want the system to have a scalable architecture, so that it can support future features and additional operating systems.",
+      "workspace": {
+        "ref": "System Architecture",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given the current architecture, When new features are added, Then the system scales without performance degradation.",
+        "Given the current architecture, When additional operating systems are supported, Then the system adapts without major changes.",
+        "Trust: Given a scalability test, When it is completed, Then the system logs performance metrics and scalability results."
+      ],
+      "blocked_by": [
+        "STORY-050",
+        "STORY-055"
+      ],
+      "owner_agent": "developer",
+      "failure_paths": [
+        "Performance degradation with new features.",
+        "Inability to support additional operating systems.",
+        "Scalability issues with increased user load."
+      ],
+      "task_guidance": "Review and enhance the system's architecture to ensure modularity and scalability, focusing on separation of concerns and efficient resource management.",
+      "due_on": "2027-12-23",
+      "due_baseline_on": "2027-12-23"
+    },
+    {
+      "id": "STORY-057",
+      "title": "Optimize System for Minimal Resource Consumption",
+      "release": "r9",
+      "fulfills": [
+        "REQ-069",
+        "REQ-070"
+      ],
+      "narrative": "As a user, I want the system to consume minimal resources when idle, so that my device's performance is not impacted.",
+      "workspace": {
+        "ref": "Resource Optimization",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given the system is idle, When I check the resource usage, Then CPU and memory consumption should be minimal.",
+        "Given the system is idle, When I check the battery usage, Then the battery consumption should be efficient.",
+        "Trust: Given the system is idle, When I review the audit logs, Then no unnecessary processes should be running."
+      ],
+      "blocked_by": [
+        "STORY-056"
+      ],
+      "owner_agent": "System",
+      "failure_paths": [
+        "High CPU usage when idle",
+        "High memory usage when idle",
+        "Excessive battery drain when idle"
+      ],
+      "task_guidance": "Review the current system processes and optimize any that are consuming resources unnecessarily. Ensure that the system enters a low-power state when not actively processing meetings.",
+      "due_on": "2027-12-30",
+      "due_baseline_on": "2027-12-30"
+    },
+    {
+      "id": "STORY-058",
+      "title": "Enhance System Capability to Process Long Meetings",
+      "release": "r9",
+      "fulfills": [
+        "REQ-071"
+      ],
+      "narrative": "As a user, I want the system to handle long meetings efficiently, so that no data is lost during extended sessions.",
+      "workspace": {
+        "ref": "Long Meeting Processing",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given a meeting lasts several hours, When the meeting is processed, Then the system should handle it without data loss.",
+        "Given a long meeting is processed, When I check the transcript, Then it should be complete and accurate.",
+        "Trust: Given a long meeting is processed, When I review the audit logs, Then the processing should be logged with timestamps."
+      ],
+      "blocked_by": [
+        "STORY-056",
+        "STORY-057"
+      ],
+      "owner_agent": "System",
+      "failure_paths": [
+        "Data loss during long meetings",
+        "System crash during long meetings",
+        "Incomplete transcripts for long meetings"
+      ],
+      "task_guidance": "Ensure the system can handle extended audio streams without interruption. Test with meetings of varying lengths to confirm stability and accuracy.",
+      "due_on": "2028-01-06",
+      "due_baseline_on": "2028-01-06"
+    },
+    {
+      "id": "STORY-059",
+      "title": "Implement Trust Spine for Initial Setup and Detection",
+      "release": "r0",
+      "fulfills": [
+        "REQ-001",
+        "REQ-002",
+        "REQ-018",
+        "REQ-020",
+        "REQ-027",
+        "REQ-067"
+      ],
+      "narrative": "As a system administrator, I want to ensure that the system's initial setup and detection processes are idempotent and auditable, so that data integrity and compliance are maintained.",
+      "workspace": {
+        "ref": "Meeting Detection Process",
+        "kind": "headless",
+        "action": null
+      },
+      "acceptance": [
+        "Given the system is set up for the first time, When a meeting is detected, Then the detection process should be idempotent and logged in the audit trail.",
+        "Given the system has already detected a meeting, When the detection process is triggered again, Then no duplicate entries should be created in the audit trail.",
+        "Trust: Given any detection process, When it completes, Then an entry is created in the audit trail with a timestamp and status."
+      ],
+      "blocked_by": [],
+      "owner_agent": "System Administrator",
+      "failure_paths": [
+        "Duplicate meeting detection entries",
+        "Audit trail entry missing",
+        "Incorrect timestamp in audit trail"
+      ],
+      "task_guidance": "Implement logging for each detection process in the audit trail. Ensure idempotency by checking existing entries before creating new ones.",
+      "due_on": "2026-12-28",
+      "due_baseline_on": "2026-12-28"
+    },
+    {
+      "id": "STORY-060",
+      "title": "User Interface for Non-Technical and Advanced Users",
+      "release": "r3",
+      "fulfills": [
+        "REQ-065"
+      ],
+      "narrative": "As a user, I want a simple interface with advanced options, so that I can use the system effectively regardless of my technical expertise.",
+      "workspace": {
+        "ref": "User Interface",
+        "kind": "workspace",
+        "action": null
+      },
+      "acceptance": [
+        "Given a non-technical user, When accessing the system, Then the interface should present simple options by default.",
+        "Given an experienced user, When accessing advanced settings, Then additional configuration options should be available.",
+        "Trust: Given any user action, When a setting is changed, Then the change is logged with user details in the audit trail."
+      ],
+      "blocked_by": [
+        "STORY-018"
+      ],
+      "owner_agent": "User",
+      "failure_paths": [
+        "Advanced options not visible",
+        "Simple mode too complex",
+        "Changes not logged"
+      ],
+      "task_guidance": "Design the UI to toggle between simple and advanced modes. Ensure all changes are logged with user details.",
+      "due_on": "2027-04-29",
+      "due_baseline_on": "2027-04-29"
+    }
+  ],
+  "agents": [],
+  "project": {
+    "name": "MeetingMind AI",
+    "descriptor": "Universal AI-Powered Background Call Transcription Assistant",
+    "repo_url": null,
+    "plan_version": 1,
+    "plan_sha256": "262c45fd55b9416844dde0dcce44ebe7a9dae7c750d0d176e93cbc02e40821b5"
+  },
+  "schedule": {
+    "build_start": "2026-12-03",
+    "build_end": "2027-01-21",
+    "demo_day": "2027-01-28",
+    "build_weeks": 7,
+    "demo_release_key": "r1",
+    "roadmap_release_keys": [
+      "r2",
+      "r3",
+      "r4",
+      "r5",
+      "r6",
+      "r7",
+      "r8",
+      "r9"
+    ],
+    "prep": [
+      {
+        "key": "PREP-1",
+        "title": "Record Your Project Introduction",
+        "due_on": "2027-01-22"
+      },
+      {
+        "key": "PREP-2",
+        "title": "Record Your Working-System Demo",
+        "due_on": "2027-01-23"
+      },
+      {
+        "key": "PREP-3",
+        "title": "Record Your AI Visual Presentation",
+        "due_on": "2027-01-25"
+      },
+      {
+        "key": "PREP-4",
+        "title": "Record Your Stakeholder Update",
+        "due_on": "2027-01-26"
+      },
+      {
+        "key": "PREP-5",
+        "title": "Record Your Final Showcase",
+        "due_on": "2027-01-27"
+      },
+      {
+        "key": "PREP-6",
+        "title": "Present at Demo Day",
+        "due_on": "2027-01-28"
+      }
+    ]
+  },
+  "derived": {
+    "measures": [],
+    "guardrails": [
+      {
+        "id": "REQ-015",
+        "statement": "The system must provide options for local processing and cloud-based AI processing, prioritizing local processing to reduce privacy risks and cloud costs.",
+        "kind": "hard_rule",
+        "approver": null
+      },
+      {
+        "id": "REQ-016",
+        "statement": "The system must encrypt stored transcripts and audio recordings.",
+        "kind": "hard_rule",
+        "approver": null
+      },
+      {
+        "id": "REQ-017",
+        "statement": "The system must allow users to delete their data permanently and provide data export functionality.",
+        "kind": "hard_rule",
+        "approver": null
+      },
+      {
+        "id": "REQ-018",
+        "statement": "The system must obtain the necessary permissions before accessing microphone or system audio and require appropriate participant consent before capturing conversations.",
+        "kind": "hard_rule",
+        "approver": null
+      },
+      {
+        "id": "REQ-019",
+        "statement": "The system must provide a clear indicator whenever audio capture or transcription is active.",
+        "kind": "hard_rule",
+        "approver": null
+      },
+      {
+        "id": "REQ-020",
+        "statement": "The system must never secretly record calls or bypass operating-system or application permissions.",
+        "kind": "hard_rule",
+        "approver": null
+      },
+      {
+        "id": "REQ-052",
+        "statement": "The system must distinguish between explicitly discussed information and AI-generated interpretations.",
+        "kind": "hard_rule",
+        "approver": null
+      },
+      {
+        "id": "REQ-066",
+        "statement": "The system must securely manage API keys and authentication credentials.",
+        "kind": "hard_rule",
+        "approver": null
+      },
+      {
+        "id": "REQ-067",
+        "statement": "The system must provide clear information about what data is processed locally and what is sent to external services.",
+        "kind": "hard_rule",
+        "approver": null
+      }
+    ],
+    "systems": [
+      "ChromeOS"
+    ],
+    "roles": [
+      "user",
+      "developer",
+      "project manager",
+      "system administrator"
+    ],
+    "counts": {
+      "requirements_total": 85,
+      "requirements_by_kind": {
+        "CONSTRAINT": 2,
+        "FUNC": 61,
+        "NFR": 13,
+        "SAFE": 9
+      },
+      "stories_total": 60,
+      "releases_total": 10,
+      "agents_total": 0,
+      "failure_paths_total": 178,
+      "agents_by_autonomy": {}
+    },
+    "understanding": {
+      "entries": [
+        {
+          "dimension": "actors",
+          "heading": "Who uses it",
+          "statement": "The application should be simple enough for non-technical users while providing advanced configuration options for experienced users.",
+          "standing": "stated_not_confirmed"
+        },
+        {
+          "dimension": "approval_points",
+          "heading": "What a person checks before it acts",
+          "statement": "Audio capture must always operate with the necessary permissions and appropriate participant consent.",
+          "standing": "stated_not_confirmed"
+        },
+        {
+          "dimension": "approval_points",
+          "heading": "What a person checks before it acts",
+          "statement": "I would want the application to demonstrate consistent accuracy, reliability, and transparency before allowing it to operate fully autonomously.\n\nThe following conditions should be met:\n\n1. **Transcription accuracy:** Demonstrate consistently high transcription accuracy across different speakers, accents, languages, audio devices, and meeting environments.\n2. **Reliable meeting detection:** Successfully detect the start and end of meetings across supported applications without requiring manual intervention.\n3. **Audio capture reliability:** Capture both microphone and system audio correctly, including when users switch between built-in speakers, external microphones, and headsets.\n4. **Speaker identification:** Reliably distinguish between different participants and associate their statements with the correct speakers.\n5. **AI output verification:** Ensure that summaries, decisions, and action items accurately reflect the actual conversation without inventing information.\n6. **Cross-platform testing:** Demonstrate reliable performance across Windows, macOS, and Linux laptops, different manufacturers, and different hardware configurations.\n7. **Privacy and consent:** Ensure that the application follows the required permission and participant-consent processes before capturing any conversation.\n\nI would also require:\n\n- A clear dashboard showing which meetings were detected, transcribed, and processed.\n- Activity logs explaining what the application did and when.\n- The ability to review transcripts and correct errors.\n- An option to undo or reverse automated actions where possible.\n- Notifications when meeting detection, audio capture, or transcription fails.\n- The ability to pause or disable autonomous operation immediately.\n\nInitially, I would prefer a supervised testing period where the application records its performance and allows users to verify results. Once it demonstrates consistent reliability, it can transition to fully autonomous operation based on user-configured settings.\n\nThe application should always remain transparent and provide users with control over its background activities.",
+          "standing": "stated_not_confirmed"
+        },
+        {
+          "dimension": "current_workflow",
+          "heading": "How it starts, and how often",
+          "statement": "The application should automatically detect when a meeting or voice call begins and initiate the transcription process without requiring me to manually open the application or click a start button.\n\nThe preferred triggers are:\n\n1. **Automatic call detection:** Detect when a supported communication application such as Zoom, Google Meet, Microsoft Teams, Webex, Skype, or another calling application starts an active call.\n2. **Audio activity detection:** Identify potential conversations through microphone and system-audio activity, including calls made through browser-based platforms.\n3. **Calendar integration:** Optionally use Google Calendar or Outlook Calendar to identify scheduled meetings and prepare the application for transcription.\n4. **Manual activation:** Provide an option to start transcription manually for unsupported applications or in-person conversations.\n\nThe application should ask for or verify the necessary permissions and participant consent before starting audio capture. It should clearly indicate when transcription is active.\n\nI want this functionality to work across different laptop brands and supported operating systems, rather than being limited to a particular device or meeting platform.\n\nMeeting frequency can vary depending on the work schedule. Therefore, the application should be designed to handle multiple meetings per day and frequent meetings throughout the week without requiring manual setup each time.\n\nThe system should automatically create a separate transcript for each meeting, detect when a meeting ends, and prepare its summary and action items.",
+          "standing": "stated_not_confirmed"
+        },
+        {
+          "dimension": "desired_outcome",
+          "heading": "What would make someone say they did not know it could do that",
+          "statement": "The standout feature should be an AI-powered personal knowledge assistant that remembers and connects information across all previous meetings.\n\nI want users to be able to interact with their meeting history as if they were talking to an intelligent assistant that understands their conversations, projects, and ongoing discussions.\n\n### Standout Features\n\n1. **AI Memory Across Meetings:** The application should connect discussions across multiple meetings and remember important decisions, commitments, project updates, and unresolved issues.\n\n2. **Ask Anything About Past Conversations:** Users should be able to ask questions such as \"What did we decide about this project last month?\", \"What tasks are still pending?\", or \"What did we promise the client?\" The AI should retrieve answers from previous transcripts with references to the original meetings and timestamps.\n\n3. **Proactive Meeting Preparation:** Before a scheduled meeting, the application should review relevant previous discussions and prepare a briefing containing outstanding tasks, previous decisions, pending questions, and topics that need follow-up.\n\n4. **Intelligent Follow-Up Tracking:** Automatically track commitments and action items across meetings. If a previously assigned task is discussed again, identify whether it has been completed, delayed, or is still pending.\n\n5. **Meeting-to-Project Intelligence:** Automatically connect related conversations to projects and provide a consolidated history of discussions, decisions, and progress.\n\n6. **Universal Meeting Support:** Work across different meeting platforms, browser-based calls, and supported voice communication applications, without restricting users to one specific platform or laptop manufacturer.\n\n7. **Voice-Based AI Assistant:** Allow users to ask questions about previous meetings using voice or text and receive contextual answers.\n\n8. **Smart Knowledge Extraction:** Identify important information such as project requirements, technical discussions, customer feedback, business opportunities, deadlines, and commitments.\n\n### Features That Could Be Deferred or Dropped\n\nIf development time, resources, or technical limitations require prioritization, I would defer the following features:\n\n- Real-time sentiment and emotion analysis.\n- Advanced visual analytics and meeting statistics.\n- Extensive integrations with less commonly used productivity platforms.\n- Complex customization of summary templates.\n- Advanced team collaboration and shared workspaces.\n- Automated task creation in multiple external applications.\n- Support for less commonly used languages in the initial release.\n\n### Development Priority\n\nThe initial release should focus on reliable background meeting detection, universal laptop compatibility, audio capture, accurate transcription, speaker identification, AI summaries, action items, and searchable meeting history.\n\nThe most important differentiating capability to develop next is cross-meeting AI memory, allowing users to retrieve information and understand the history of discussions across multiple meetings.\n\nI would rather have a highly reliable transcription and intelligent knowledge assistant than a product with many advanced features that do not work consistently.\n\nThe long-term vision is to make MeetingMind AI a personal knowledge assistant that understands everything discussed across meetings and helps users remember, retrieve, connect, and act on that information.",
+          "standing": "stated_not_confirmed"
+        },
+        {
+          "dimension": "human_only_decisions",
+          "heading": "What stays a human call",
+          "statement": "The primary judgment should be identifying what is important, actionable, and relevant from the entire conversation rather than simply shortening the transcript.\n\nWhen generating meeting summaries and action items, the AI should consider the following:\n\n1. **Key Discussion Points:** Identify the most important topics, updates, problems, suggestions, and discussions.\n2. **Decisions Taken:** Capture final decisions, agreements, approvals, and changes in direction. Distinguish confirmed decisions from ideas or suggestions.\n3. **Action Items:** Identify specific tasks that need to be completed as a result of the discussion.\n4. **Responsible Individuals:** Identify who has been assigned each task. Do not assume ownership if it was not clearly mentioned.\n5. **Deadlines:** Capture explicitly mentioned deadlines, target dates, and expected completion timelines.\n6. **Project Relevance:** Prioritize information based on its relevance to ongoing projects, business objectives, and previously discussed goals.\n7. **Pending Issues:** Identify unresolved questions, blockers, dependencies, and topics requiring further discussion.\n8. **Context and Continuity:** Consider previous meeting discussions to identify updates, changes, and outstanding commitments.\n\nThe AI should rely primarily on the actual conversation transcript, speaker identification, timestamps, and relevant previous meeting records.\n\nIt should distinguish between confirmed facts, proposed ideas, and AI-generated recommendations. It must not invent decisions, assign tasks without evidence, or assume deadlines.\n\nThe final summary should be concise but meaningful, ensuring that someone who did not attend the meeting can understand what was discussed, what was decided, who needs to do what, and what happens next.",
+          "standing": "stated_not_confirmed"
+        },
+        {
+          "dimension": "human_only_decisions",
+          "heading": "What stays a human call",
+          "statement": "The system should always attempt to provide the best possible transcription without interrupting the meeting. If it encounters unclear speech, background noise, overlapping voices, or words it cannot confidently recognize, it should:\n\n1. Flag the uncertain portion in the transcript.\n2. Include a confidence indicator for the uncertain segment.\n3. Preserve the original timestamp and speaker identification wherever possible.\n4. Make a best-effort transcription without inventing or assuming words.\n5. Allow users to replay the corresponding audio segment and correct the text manually.\n6. Clearly distinguish confirmed words from uncertain or inaudible portions.\n\nThe system should never pause the entire transcription because of a small unclear section. It should continue capturing the conversation and maintain the highest possible accuracy.\n\nIf AI generates a suggested correction, it should clearly identify it as a suggestion rather than presenting it as confirmed speech.",
+          "standing": "stated_not_confirmed"
+        },
+        {
+          "dimension": "problem",
+          "heading": "What you are building",
+          "statement": "# Project Name: MeetingMind AI – Universal AI-Powered Background Call Transcription Assistant\n\n## 1. Project Overview\n\nI want to build an intelligent AI-powered desktop application that runs quietly in the background on any laptop and automatically detects ongoing calls, meetings, or voice conversations.\n\nThe application should capture conversations from different communication platforms, convert speech into accurate text transcripts, identify individual speakers, and use AI to generate meeting summaries, key discussion points, decisions, and action items.\n\nThe primary objective is to elimi...",
+          "standing": "stated_not_confirmed"
+        },
+        {
+          "dimension": "problem",
+          "heading": "What you are building",
+          "statement": "The ultimate vision is to create a universal AI meeting assistant that works on virtually any laptop, captures important conversations with consent, converts them into structured knowledge, and makes every past discussion searchable and actionable.",
+          "standing": "stated_not_confirmed"
+        },
+        {
+          "dimension": "success_definition",
+          "heading": "What good looks like",
+          "statement": "Currently, manually transcribing and summarizing meetings can take anywhere from 30 minutes to over an hour, depending on the meeting duration and complexity.\n\nThe goal is to eliminate this manual effort as much as possible.\n\nOur performance expectations are:\n\n1. **Real-time transcription:** The application should generate transcripts while the meeting is happening, with minimal delay (ideally 2–5 seconds).\n2. **Post-meeting processing:** Once the meeting ends, the complete transcript should be finalized within 1–2 minutes.\n3. **AI meeting summary:** The summary, key discussion points, decisions, and action items should be generated within 2–5 minutes after the meeting ends.\n4. **Long meetings:** The application should efficiently handle meetings lasting one to several hours without losing conversation data.\n5. **Background processing:** Transcription should happen automatically without affecting the laptop's normal performance or interrupting other activities.\n\nThe ultimate goal is to make the transcript available almost immediately and deliver a complete AI-generated meeting summary within 5 minutes of the meeting ending, wherever hardware and processing capabilities permit.",
+          "standing": "stated_not_confirmed"
+        },
+        {
+          "dimension": "systems",
+          "heading": "What it has to work with",
+          "statement": "Detect calls from platforms such as Zoom, Google Meet, Microsoft Teams, Webex, Skype, WhatsApp Desktop, and other supported communication applications.",
+          "standing": "stated_not_confirmed"
+        }
+      ],
+      "unanswered": []
+    },
+    "handoffs": [],
+    "artifacts": []
+  }
+}
